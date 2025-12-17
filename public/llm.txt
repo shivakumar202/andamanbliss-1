@@ -1,0 +1,31 @@
+# AI Access Rules for LLM Crawlers
+# Site: andamanbliss.com
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Block internal Laravel system folders
+Disallow: /vendor/
+Disallow: /storage/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /resources/
+Disallow: /routes/
+
+# Block user-sensitive areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /user/
+Disallow: /login/
+Disallow: /register/
+
+Sitemap: https://andamanbliss.com/sitemap.xml

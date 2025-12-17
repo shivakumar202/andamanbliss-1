@@ -1,0 +1,21 @@
+# AI Crawler Rules for andamanbliss.com
+
+User-agent: *
+Allow: /
+
+# Restrict internal application folders
+Disallow: /vendor/
+Disallow: /storage/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /resources/
+Disallow: /routes/
+
+# Restrict sensitive user paths
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /user/
+Disallow: /login/
+Disallow: /register/
+
+Sitemap: https://andamanbliss.com/sitemap.xml

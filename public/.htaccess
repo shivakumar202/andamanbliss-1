@@ -1,0 +1,100 @@
+Options -Indexes
+RewriteEngine On
+
+# --------------------------------------------------------
+# 1) Force HTTPS and redirect www → non-www
+# --------------------------------------------------------
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.andamanbliss\.com$ [NC]
+RewriteRule ^(.*)$ https://andamanbliss.com/$1 [R=301,L]
+
+# --------------------------------------------------------
+# 2) Redirect old URLs to new URLs
+# --------------------------------------------------------
+# /tours or /tour → /andaman-tour-packages
+RewriteRule ^tours/?(.*)$ https://andamanbliss.com/andaman-tour-packages/$1 [R=301,L]
+RewriteRule ^tour/?(.*)$ https://andamanbliss.com/andaman-tour-packages/$1 [R=301,L]
+
+# /activities or /water-sports → /activity
+RewriteRule ^water-sports/?(.*)$ https://andamanbliss.com/activities/$1 [R=301,L]
+RewriteRule ^water-sports/?(.*)$ https://andamanbliss.com/activities/$1 [R=301,L]
+
+# /city-packages/* → /*
+RewriteRule ^city-packages/(.*)$ https://andamanbliss.com/$1 [R=301,L]
+
+RewriteRule ^([^/]*)([0-9]+)nights-?([0-9]+)days/?$ /$1$2-nights-$3-days/ [R=301,L,NC]
+
+
+# --------------------------------------------------------
+# 3) Force trailing slash if not a file or directory
+# --------------------------------------------------------
+# --------------------------------------------------------
+# 3) Force trailing slash if not a file or directory
+# --------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.[a-zA-Z0-9]{1,5}$
+RewriteCond %{REQUEST_URI} !/$
+RewriteCond %{REQUEST_URI} !^/livewire/
+RewriteCond %{REQUEST_URI} !^/hotel-search/fetch-chunk$
+RewriteCond %{REQUEST_URI} !^/hotel/payment-review(/.*)?$
+RewriteCond %{REQUEST_URI} !^/hotel/payment/update$
+RewriteCond %{REQUEST_URI} !^/hotel/payment-review/submit$
+RewriteCond %{REQUEST_URI} !^/travel-packages/payment/success$
+RewriteCond %{REQUEST_URI} !^/travel-packages/payment$
+RewriteCond %{REQUEST_URI} !^/login$
+RewriteCond %{REQUEST_URI} !^/hotel(/.*)?$
+RewriteCond %{REQUEST_URI} !^/ajx-login$
+RewriteCond %{REQUEST_URI} !^/boat-trip-pay$
+RewriteCond %{REQUEST_URI} !^/cabs-locations$
+RewriteCond %{REQUEST_URI} !^/boat-trip-pay-verify$
+RewriteCond %{REQUEST_URI} !^/cabs/submit$
+RewriteCond %{REQUEST_URI} !^/cabs/payment-confirmation$
+RewriteCond %{REQUEST_URI} !^/payment-confirmation$
+RewriteCond %{REQUEST_URI} !^/activity/paymentsubmit$
+RewriteCond %{REQUEST_URI} !^/cab-checkout$
+RewriteCond %{REQUEST_URI} !^/register$
+RewriteCond %{REQUEST_URI} !^/admin(/.*)?$
+RewriteCond %{REQUEST_URI} !^/[^/]+/andaman-[^/]+-tour-[^/]+/itinerary$
+RewriteCond %{REQUEST_URI} !^/store-temp-itinerary$
+RewriteCond %{REQUEST_URI} !^/book/bikes/review$
+RewriteCond %{REQUEST_URI} !^/ferry-booking(/.*)?$
+RewriteCond %{REQUEST_URI} !^/booking/confirm(/.*)?$
+RewriteCond %{REQUEST_URI} !^/activity/payment-voucher(/.*)?$
+RewriteCond %{REQUEST_URI} !^/activity/payment/update$
+
+RewriteCond %{REQUEST_URI} !^/contact$
+
+
+RewriteRule ^(.*)$ https://andamanbliss.com/$1/ [R=301,L]
+
+# --------------------------------------------------------
+# 3) Cache headers
+# --------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/jpg  "access plus 1 year"
+  ExpiresByType image/png  "access plus 1 year"
+  ExpiresByType image/gif  "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+
+  # Fonts
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff  "access plus 1 year"
+
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+</IfModule>
+
+# --------------------------------------------------------
+# 4) Laravel front controller fallback
+# --------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]

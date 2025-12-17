@@ -1,0 +1,265 @@
+/* Mobile Menu Styles */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 10000;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.mobile-sidebar-menu.active {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #222;
+    flex-shrink: 0;
+}
+
+.mobile-menu-title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.mobile-menu-close {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-items {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.mobile-menu-item {
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+    background-color: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+}
+
+.mobile-submenu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 0px;
+    height: 0px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    margin-right: 12px;
+    position: relative;
+
+}
+
+.mobile-submenu-toggle i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    color: #666;
+}
+
+.mobile-submenu-toggle.active i {
+    transform: rotate(45deg);
+    color: #333;
+}
+
+.mobile-submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f5f5f5;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-submenu.active {
+    max-height: 1000px; /* This will be overridden by JS */
+    overflow-y: auto;
+}
+
+/* For very long submenus */
+.mobile-submenu.level-2.active {
+    max-height: 300px !important; /* Fixed height with scrolling */
+    overflow-y: auto;
+}
+
+.mobile-submenu.level-3.active {
+    max-height: 200px !important; /* Fixed height with scrolling */
+    overflow-y: auto;
+}
+
+.mobile-submenu-item {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.mobile-submenu-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-submenu-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px 12px 30px;
+    color: #444;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.mobile-submenu-link:hover,
+.mobile-submenu-link:focus {
+    background-color: #eaeaea;
+    color: #333;
+    text-decoration: none;
+}
+
+/* Level 2 submenu styles */
+.mobile-submenu.level-2 {
+    background-color: #f5f5f5;
+}
+
+.mobile-submenu.level-2 .mobile-submenu-link {
+    padding-left: 45px;
+    font-size: 13px;
+    color: #555;
+}
+
+.mobile-submenu-toggle.level-2 {
+    width: 24px;
+    height: 24px;
+}
+
+.mobile-submenu-toggle.level-2 i {
+    font-size: 12px;
+}
+
+/* Level 3 submenu styles */
+.mobile-submenu.level-3 {
+    background-color: #eaeaea;
+}
+
+.mobile-submenu.level-3 .mobile-submenu-link {
+    padding-left: 60px;
+    font-size: 12px;
+    color: #666;
+}
+
+.mobile-submenu-toggle.level-3 {
+    width: 22px;
+    height: 22px;
+}
+
+.mobile-submenu-toggle.level-3 i {
+    font-size: 11px;
+}
+
+/* Fix for nested submenu toggle buttons */
+.mobile-submenu-item.has-submenu > a {
+    position: relative;
+}
+
+.mobile-submenu-item.has-submenu .mobile-submenu-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Desktop and Mobile Menu Display Logic */
+@media (max-width: 991px) {
+    /* Hide desktop menu on mobile */
+    .navbar-collapse {
+        display: none !important;
+    }
+
+    /* Show mobile menu toggle on mobile */
+    .navbar-toggler {
+        display: block !important;
+    }
+
+    /* Show mobile menu elements */
+    .mobile-menu-overlay,
+    .mobile-sidebar-menu {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Hide mobile menu on desktop */
+    .mobile-menu-overlay,
+    .mobile-sidebar-menu {
+        display: none !important;
+    }
+
+    /* Hide mobile menu toggle on desktop */
+    .navbar-toggler {
+        display: none !important;
+    }
+
+    /* Show desktop menu on desktop */
+    .navbar-collapse {
+        display: flex !important;
+    }
+}

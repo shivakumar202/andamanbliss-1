@@ -1,0 +1,222 @@
+@extends('admin.layouts.app')
+
+@section('title', __(@$bike->name . ': Facility'))
+
+@section('content')
+<!-- Heading -->
+<div class="breadcrumbs">
+  <div class="breadcrumbs-inner">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="page-header float-left">
+          <div class="page-title">
+            <h1>{{ __(@$bike->name) }}</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="page-header float-right">
+          <div class="page-title">
+            <ol class="breadcrumb text-right">
+              <li><a href="{{ url('admin/home') }}">{{ __('Dashboard') }}</a></li>
+              <li><a href="{{ url('admin/bikes') }}">{{ __('Bike') }}</a></li>
+              <li class="active">{{ __('Facility') }}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2">
+        <a href="{{ url('admin/bikes/' . request('bikeId')) }}" class="btn btn-info float-right my-2 mx-3">
+          <i class="fa fa-undo fa-lg"></i>&nbsp;
+          {{ __('Back') }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="content">
+  <!-- Animated -->
+  <div class="animated fadeIn">
+
+    @include('admin.layouts.alert')
+
+    <!-- Form -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <strong class="card-title">
+              {{ __('Facility') }}
+            </strong>
+          </div>
+
+          <div class="card-body">
+            <form name="form"
+            @if (@$facility)
+            action="{{ url('admin/bikes/' . request('bikeId') . '/facilities/' . @$facility->id) }}"
+            @else
+            action="{{ url('admin/bikes/' . request('bikeId') . '/facilities') }}"
+            @endif
+            method="POST" id="form" class="" enctype="multipart/form-data" novalidate="novalidate" autocomplete="off">
+              @csrf
+
+              <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="name" class="control-label">
+                      {{ __('Name') }}
+                      <span style="color:red;">*</span>
+                    </label>
+                    <input type="text" name="name" placeholder="{{ __('Name') }}" value="{{ old('name', @$facility->name) }}" id="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" autocomplete="off" autofocus />
+                    @if ($errors->has('name'))
+                    <label class="error">{{ $errors->first('name') }}</label>
+                    @endif
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="value" class="control-label">
+                      {{ __('Value') }}
+                      <span style="color:red;">*</span>
+                    </label>
+                    <input type="text" name="value" placeholder="{{ __('Value') }}" value="{{ old('value', @$facility->value) }}" id="value" class="form-control {{ $errors->has('value') ? 'is-invalid' : '' }}" autocomplete="off" autofocus />
+                    @if ($errors->has('value'))
+                    <label class="error">{{ $errors->first('value') }}</label>
+                    @endif
+                  </div>
+                </div>
+              </div>
+
+              <div class="row align-items-center justify-content-center">
+                <div class="align-self-center col-md-2">
+                  <button type="submit" name="submit" id="submit" class="btn btn-block btn-info my-1">
+                    <i class="fa fa-floppy-o fa-lg"></i>&nbsp;
+                    <span>{{ __('Save') }}</span>
+                  </button>
+                </div>
+
+                <div class="align-self-center col-md-2">
+                  <a href="{{ url('admin/bikes/' . request('bikeId') . '/facilities') }}" id="reset" class="btn btn-block btn-outline-info my-1">
+                    <i class="fa fa-refresh fa-lg"></i>&nbsp;
+                    <span>{{ __('Reset') }}</span>
+                  </a>
+                </div>
+              </div>
+            </form>
+
+            <table id="dataTable" class="table table-striped table-hover w-100">
+              <thead class="thead-dark">
+                <tr>
+                  <th>{{ __('ID') }}</th>
+                  <th>{{ __('Name') }}</th>
+                  <th>{{ __('Value') }}</th>
+                  <th>{{ __('Action') }}</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                @foreach($facilities as $key => $facility)
+                <tr>
+                  <td>{{ @$facility->id }}</td>
+                  <td>{{ ucwords(@$facility->name) }}</td>
+                  <td>{{ ucwords(@$facility->value) }}</td>
+                  <td>
+                    <a href="{{ url('admin/bikes/' . request('bikeId') . '/facilities/' . @$facility->id) }}" title="Edit" class="btn btn-xs btn-outline-info py-0 mx-1">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <a onClick="if (confirm('Are you sure?')) return this.nextElementSibling.submit();" href="javascript:;" title="Delete" class="btn btn-xs btn-outline-danger py-0 mx-1">
+                      <i class="fa fa-trash-o"></i>
+                    </a>
+                    <form action="{{ url('admin/bikes/' . request('bikeId') . '/facilities/' . @$facility->id) }}" method="POST" class="d-none">
+                      @method('DELETE')
+                      @csrf
+                    </form>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
+          </div>
+        </div><!-- .card -->
+      </div>
+      <!--/.col-->
+    </div>
+  </div>
+  <!-- .animated -->
+</div>
+<!-- /.content -->
+@endsection
+
+@section('css')
+<style type="text/css">
+
+</style>
+@endsection
+
+@section('script')
+<script type="text/javascript">
+  var datatable;
+
+  $(document).ready(function() {
+    datatable = $('#dataTable').DataTable({
+      responsive: true,
+      lengthMenu: [
+        [10, 50, 100, -1],
+        [10, 50, 100, 'All']
+      ],
+      pageLength: 10,
+      aaSorting: [0, 'DESC'],
+      columnDefs: [{
+          targets: [0, 3], // column index
+          orderable: false,
+        },
+        {
+          targets: [0, 3], // column index
+          searchable: false,
+        },
+        {
+          targets: [0], // column index
+          visible: false,
+        }
+      ],
+      // dom: 'lBfrtip',
+      dom: '<"row"<"col-sm-3"l><"col-sm-4"B><"col-sm-5"f>>' +
+        '<"row"<"col-sm-12"tr>>' +
+        '<"row"<"col-sm-5"i><"col-sm-7"p>>',
+      buttons: [{
+          extend: 'csv',
+          text: 'CSV',
+          filename: 'bike_facilities',
+          className: 'btn btn-xs btn-dark py-1',
+          exportOptions: {
+            columns: ':visible:not(:last-child)'
+          }
+        },
+        {
+          extend: 'excel',
+          text: 'Excel',
+          filename: 'bike_facilities',
+          className: 'btn btn-xs btn-dark py-1',
+          exportOptions: {
+            columns: ':visible:not(:last-child)'
+          }
+        },
+        {
+          extend: 'pdf',
+          text: 'PDF',
+          filename: 'bike_facilities',
+          className: 'btn btn-xs btn-dark py-1',
+          exportOptions: {
+            columns: ':visible:not(:last-child)'
+          }
+        }
+      ]
+    });
+  });
+</script>
+@endsection

@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /user/
+Disallow: /users/
+Disallow: /dev/
+Allow: /
+
+Sitemap: https://www.andamanbliss.com/sitemap.xml
+Crawl-delay: 10

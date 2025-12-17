@@ -1,0 +1,84 @@
+/*
+ * File Name: custom.css
+ * UX Developer: Chandan Mistry
+ * UI Designer: Amit Mondal
+ */
+
+/* Follow Bootstrap  v5.2.3 */
+
+.error {
+  color: red !important;
+}
+.form-group .error {
+  margin-bottom: 0 !important;
+}
+
+/* DataTable Responsive for Ela Admin */
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+  #dataTable>thead,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  #dataTable>thead,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 480px),
+(min-device-width: 320px) and (max-device-width: 480px) {
+  #dataTable>thead,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+  table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control,
+  table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control {
+    position: relative;
+    padding-left: 8px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+  table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+  table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    left: -15px;
+  }
+}
+
+@media only screen and (max-width: 480px),
+(min-device-width: 320px) and (max-device-width: 320px) {
+  table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control,
+  table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control {
+    position: relative;
+    padding-left: 8px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 480px),
+(min-device-width: 320px) and (max-device-width: 480px) {
+  table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before,
+  table.dataTable.dtr-inline.collapsed>tbody>tr>th.dtr-control:before {
+    left: -15px;
+  }
+}
+/* DataTable Responsive for Ela Admin */
