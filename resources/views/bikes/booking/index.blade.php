@@ -1235,13 +1235,13 @@
 
             {{-- BIG IMAGE --}}
             <a href="{{ $first->image_url }}" data-lightbox="gallery" class="rev-big-wrap">
-                <img src="{{ $first->image_url }}" class="rev-big-img">
+                <img src="{{ $first->image_url }}" class="rev-big-img" alt="img-review">
                 <span class="rev-view-all"><i class="fa fa-camera"></i> View All ({{ $review_images->count() }})</span>
             </a>
 
             @foreach($review_images->skip(1)->take(6) as $img)
             <a href="{{ $img->image_url }}" data-lightbox="gallery">
-                <img src="{{ $img->image_url }}" class="rev-small-img">
+                <img src="{{ $img->image_url }}" class="rev-small-img" alt="img-review">
             </a>
             @endforeach
 
@@ -1260,7 +1260,7 @@
 
         @foreach($reviews as $review)
         <div class="rev-review-card   mt-2 flex-wrap">
-            <img src="{{ $review['reviewer_profile_photo_url'] }}" class="rev-avatar">
+            <img src="{{ $review['reviewer_profile_photo_url'] }}" alt="{{ Str::slug($review['reviewer_name']) }}" class="rev-avatar">
 
             <div class="rev-review-content col-10">
                 <h4 class="rev-name">{{ $review['reviewer_name'] }}</h4>

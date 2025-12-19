@@ -2457,7 +2457,7 @@ $familyPackages = [
                         <div class="dream-destination-card">
                                                     <a href="andaman-group-packages">
 
-                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=400&fit=crop" alt="Andaman Group Packages" class="dream-card-image">
+                            <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&h=400&fit=crop" alt="Andaman Group Packages" class="dream-card-image" >
                             <div class="dream-card-overlay">
                                 <h3 class="dream-destination-title">Group Packages</h3>
                                 <p class="dream-destination-subtitle">Perfect for Friends & Corporate Groups</p>
@@ -2498,7 +2498,7 @@ $familyPackages = [
                         <div class="dream-destination-card">
                                                     <a href="andaman-adventure-packages">
 
-                            <img src="{{asset('site/img/home/andaman_adventure1.jpeg')}}",alt="Andaman Adventure" class="dream-card-image">
+                            <img src="{{asset('site/img/home/andaman_adventure1.jpeg')}}" alt="Andaman Adventure" class="dream-card-image" >
                             <div class="dream-card-overlay">
                                 <h3 class="dream-destination-title">Adventure Package</h3>
                                 <p class="dream-destination-subtitle">Thrilling Experiences Await</p>

@@ -905,7 +905,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link more-menu-lst" href="#">
+                    <a class="nav-link more-menu-lst"  href="javascript:void(0)">
                         More
                         <i class="fa-solid fa-caret-down"></i>
                     </a>

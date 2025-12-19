@@ -167,8 +167,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary"><a class="text-white"
-                            href="https://andamanbliss.com/andaman-tour-packages">View All Packages</a></button>
+                    <button type="button" class="btn btn-primary"><a class="text-white" href="https://andamanbliss.com/andaman-tour-packages" aria-label="view-all">View All Packages</a></button>
                 </div>
             </div>
         </div>
@@ -485,13 +484,13 @@
 
         {{-- BIG IMAGE --}}
         <a href="{{ $first->image_url }}" data-lightbox="gallery" class="rev-big-wrap">
-            <img src="{{ $first->image_url }}" class="rev-big-img">
+            <img src="{{ $first->image_url }}" class="rev-big-img" alt="google-review-img">
             <span class="rev-view-all"><i class="fa fa-camera"></i> View All ({{ $review_images->count() }})</span>
         </a>
 
         @foreach($review_images->skip(1)->take(6) as $img)
             <a href="{{ $img->image_url }}" data-lightbox="gallery">
-                <img src="{{ $img->image_url }}" class="rev-small-img">
+                <img src="{{ $img->image_url }}" class="rev-small-img" alt="google-review-img">
             </a>
         @endforeach
 
@@ -510,7 +509,7 @@
 
   @foreach($reviews as $review)
 <div class="rev-review-card   mt-2 flex-wrap">
-    <img src="{{ $review['reviewer_profile_photo_url'] }}" class="rev-avatar">
+    <img src="{{ $review['reviewer_profile_photo_url'] }}" alt="{{ Str::slug($review['reviewer_name']) }}" class="rev-avatar">
 
     <div class="rev-review-content col-10">
         <h4 class="rev-name">{{ $review['reviewer_name'] }}</h4>

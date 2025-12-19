@@ -172,7 +172,7 @@ if ($page) {
            
             <ul>
                 @foreach($tags as $tag)
-                <li><a href="{{ $tag->link ?? '#' }}">{{ $tag->tag }}</a></li>
+                <li><a href="{{ $tag->link ?? 'javascript:void(0)' }}">{{ $tag->tag }}</a></li>
                 @endforeach
             </ul>
         </div>
