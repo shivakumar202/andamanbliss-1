@@ -1698,18 +1698,63 @@ function toggleItinerary(dayNumber) {
                             <li>We provide the best local experience with trusted guides</li>
                         </ul>
                        
-                        <h3 class="fs-6 fw-bold">How to Reach from Ahmedabad to Andaman</h3>
-                        <ul class="packages-list-style">
-                            <li><strong>By Air:</strong> No direct flights. Connect via Chennai, Kolkata, Bangalore, or Hyderabad. Travel time: 6–8 hours, with layover.</li>
-                            <li><strong>By Sea:</strong> Ships sail from Chennai, Kolkata, Visakhapatnam. Travel is long, not ideal for most from Ahmedabad.</li>
-                        </ul>
-                        
-                        
-                        <h3 class="fs-6 fw-bold mt-3">Best Time To Visit Andaman:</h3>
-                        <ul class="packages-list-style">
-                            <li>If you want to experience the best of Andaman Island, then we recommend you to plan your trip between <em>October and May</em>. As the weather during this month is pleasant, seas are calm and skies are clear and is also perfect for sightseeing and doing water sports activities.</li>
-                            <li>Avoid the Monsoon season that starts from June to September, as you may face heavy rainfall and rough sea conditions.</li>
-                        </ul>
+                        <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Ahmedabad – Relaxed & Well-Planned Island Getaway</h3>
+                            <p>Travelers from Ahmedabad can explore the enchanting beauty of the Andaman Islands with our carefully designed <strong>Andaman tour packages from Ahmedabad</strong>. These packages are created to offer a perfect balance of scenic beauty, serene beaches, and island culture. Whether you are planning a family vacation, a romantic escape, or a refreshing break from city life, <strong>Andaman Bliss</strong> ensures smooth travel, comfortable stays, and well-planned sightseeing experiences.</p>
+                            <p>From the moment you arrive in Port Blair, our team takes care of transfers, hotels, and tours so that you can relax and enjoy the islands without any stress.</p>
+
+                            <h4 class="fs-6 fw-bold mt-2">Why Andaman Is the Perfect Holiday Destination from Ahmedabad</h4>
+                            <p>The Andaman Islands offer a refreshing change from busy urban routines. With turquoise waters, clean beaches, and peaceful surroundings, the destination is ideal for travelers looking for natural beauty and relaxation.</p>
+                            <ul class="packages-list-style">
+                                <li>Beautiful sandy beaches perfect for relaxation</li>
+                                <li>Clear ocean waters ideal for swimming and water activities</li>
+                                <li>Safe and comfortable destination for all age groups</li>
+                                <li>Perfect mix of nature, marine life, and cultural attractions</li>
+                                <li>Pleasant weather conditions for most of the year</li>
+                            </ul>
+
+                            <h3 class="fs-6 fw-bold mt-2">Travel Routes from Ahmedabad to Andaman</h3>
+                            <p>Below is a simple and traveler-friendly guide to help you reach the Andaman Islands easily.</p>
+
+                            <p><strong>By Flight:</strong></p>
+                            <p>Flying is the fastest and most convenient way to reach Andaman from Ahmedabad. Though there are no direct flights, well-connected routes make the journey smooth.</p>
+                            <ul class="packages-list-style">
+                                <p><strong>Step by step route:</strong></p>
+                                <li>Start your journey from Ahmedabad Airport</li>
+                                <li>Take a connecting flight via Chennai, Kolkata, Bengaluru, or Delhi</li>
+                                <li>From the connecting city, board a direct flight to Port Blair</li>
+                            </ul>
+
+                            <p><strong>By Sea:</strong></p>
+                            <p>Ship travel offers a unique ocean journey for travelers who enjoy slow and scenic travel. Ships operate only from Chennai, Kolkata, and Visakhapatnam, and the sea journey takes around 3 to 4 days.</p>
+
+                            <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Ahmedabad by Flight</h3>
+                            <p>Flight-based <strong>Andaman tour packages from Ahmedabad</strong> are perfect for travelers who prefer a quick and comfortable start to their island holiday. These packages are ideal for families, couples, and first-time visitors.</p>
+                            <ul class="packages-list-style">
+                                <li>Airport pickup and drop included</li>
+                                <li>Comfortable and well-selected hotel stays</li>
+                                <li>Popular island sightseeing and guided tours</li>
+                                <li>Free time to explore islands at your own pace</li>
+                            </ul>
+                            <p>Package pricing depends on travel season, flight availability, hotel category, and duration of stay.</p>
+
+                            <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Ahmedabad by Ship</h3>
+                            <p>Ship-based Andaman packages are suitable for travelers who prefer a relaxed travel pace and wish to enjoy the sea journey before reaching the islands.</p>
+                            <ul class="packages-list-style">
+                                <li>Assistance and transfers on arrival at Port Blair</li>
+                                <li>Comfortable hotel accommodation after sea travel</li>
+                                <li>Planned sightseeing and beach visits</li>
+                                <li>Flexible itineraries designed for comfort</li>
+                            </ul>
+                            <p>Ship schedules and package prices vary depending on season and availability, so early booking is always recommended.</p>
+
+                        <h3 class="fs-6 fw-bold mt-2">Best Time to Visit Andaman from Ahmedabad</h3>
+                            <p>Choosing the right time to travel plays an important role in making your Andaman holiday comfortable and enjoyable.</p>
+                            <ul class="packages-list-style">
+                                <li>October to May offers pleasant weather and calm sea conditions</li>
+                                <li>Summer months are ideal for water activities like snorkeling and scuba diving</li>
+                                <li>Monsoon season may limit sea-based activities and inter-island travel</li>
+                                <li>Weather conditions directly impact sightseeing and overall travel comfort</li>
+                            </ul>
 
                         <h3 class="fs-6 fw-bold mt-3">Top Attractions to see in Andaman Island</h3>
                         
@@ -1755,15 +1800,46 @@ function toggleItinerary(dayNumber) {
                             <li><strong>7 - 10 Days:</strong> Add Baratang, Rangat, and Long Island to your itinerary</li>
                         </ul>
 
+                        <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Ahmedabad for Family Vacations</h3>
+                            <p>Families traveling from Ahmedabad can enjoy a well-balanced island holiday with a mix of fun activities, relaxed sightseeing, and comfortable travel arrangements. These family-focused Andaman tour packages are designed to ensure safety, convenience, and enjoyment for every age group.</p>
+                            <ul class="packages-list-style">
+                                <li>Hotels with family-friendly facilities and comfortable rooms</li>
+                                <li>Sightseeing and excursions suitable for all age groups</li>
+                                <li>Leisure time at scenic beaches and peaceful attractions</li>
+                                <li>Well-organized travel plans for a stress-free experience</li>
+                            </ul>
+                            <p>Family tour package costs may vary based on hotel category, number of travelers, and travel dates.</p>
 
-                        <h3 class="fs-6 fw-bold mt-3">How to Plan Your Andaman Trip from Ahmedabad</h3>
-                        <ul class="packages-list-style">
-                            <li>Book early for the best prices</li>
-                            <li>Pick the right season</li>
-                            <li>Choose a balanced itinerary</li>
-                            <li>Pack smart and light</li>
-                            <li>Choose a trusted tour operator like Andaman Bliss</li>
-                        </ul>
+                            <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Ahmedabad for Honeymoon Trips</h3>
+                            <p>Couples from Ahmedabad often choose Andaman for its romantic beaches, tranquil surroundings, and intimate resort stays. Honeymoon tour packages are thoughtfully designed to offer privacy, relaxation, and memorable moments for newlyweds.</p>
+                            <ul class="packages-list-style">
+                                <li>Romantic beach views and beautiful sunset experiences</li>
+                                <li>Couple-friendly resorts and cozy stay options</li>
+                                <li>Relaxed travel schedules allowing quality time together</li>
+                                <li>Special honeymoon arrangements on request</li>
+                            </ul>
+                            <p>Honeymoon package pricing depends on resort selection, travel season, and the inclusions chosen.</p>
+
+                        <h3 class="fs-6 fw-bold mt-2">How to Choose the Right Holiday Plan</h3>
+                            <p>Selecting the ideal Andaman tour package becomes much easier when your travel expectations and priorities are clear.</p>
+                            <ul class="packages-list-style">
+                                <li>Decide your travel duration and overall budget in advance</li>
+                                <li>Choose between flight or sea travel based on comfort and time preference</li>
+                                <li>Prioritize specific needs for family vacations or couple travel</li>
+                                <li>Select hotel categories based on comfort and stay expectations</li>
+                            </ul>
+
+                            <h3 class="fs-6 fw-bold mt-2">Tips for Smooth Travel Planning</h3>
+                            <p>Proper planning helps ensure a hassle-free journey and a more enjoyable island experience.</p>
+                            <ul class="packages-list-style">
+                                <li>Book flights or ship tickets well in advance</li>
+                                <li>Ensure all travelers carry valid government identity documents</li>
+                                <li>Plan sightseeing activities based on arrival and departure timings</li>
+                                <li>Check weather forecasts before departure for better preparation</li>
+                            </ul>
+
+                            <p><em>Turn your travel dreams from Ahmedabad into reality and let the tranquil shores of Andaman welcome you with open hearts.</em></p>
+
                         <div class="row mt-3">
                             <div class="col-md-6">
                                 <h3 class="fs-6 fw-bold">Inclusion:</h3>

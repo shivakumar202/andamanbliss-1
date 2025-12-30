@@ -1708,26 +1708,58 @@ function toggleItinerary(dayNumber) {
                             <li>Water Sports & Adventure Activities.</li>
                         </ul>
                        
-                        <h3 class="fs-6 fw-bold">How Can I Reach Andaman Island from Bangalore</h3>
-                        <strong>By Air:</strong> 
-                        <ul class="packages-list-style">
-                           <li> The easiest and fastest way to reach Andaman island from Bangalore is by flight. There are no direct flights from Bangalore, so you need to take a connecting flight via cities like Chennai, Hyderabad and Kolkata.</li>
-                            <li> The duration of the flight will take around 4 to 5 hours, including the layover.</li>
-                        </ul>
+                        <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Bangalore by Flight and Ship for Family & Honeymoon</h3>
+                            <p>Traveling from Bangalore to the Andaman Islands is a perfect option for those who want to escape city life and enjoy a calm and refreshing beach holiday. Our <strong>Andaman tour packages from Bangalore</strong> are thoughtfully designed to offer a balanced combination of adventure and relaxation. Whether you are planning a family vacation, a romantic honeymoon, or a solo escape, these packages include flexible options suitable for every type of traveler.</p>
 
+                            <h3 class="fs-6 fw-bold mt-2">Travel Options from Bangalore to Andaman</h3>
+                            <p>Travelers from Bangalore can choose between flight or ship based on comfort, time, and travel preference.</p>
 
-                        <strong>By Ship:</strong> 
-                        <ul class="packages-list-style">
-                           <li> As of now, there are no direct ships from Bangalore to Andaman island, so you need to travel from Bangalore to major cities like Chennai, Kolkata or Visakhapatnam and then board a government ship to reach Andaman island.</li>
-                            <li> It will take you around 3 to 4 days to reach Andaman island.</li>
-                        </ul>
+                            <p><strong>By Flight:</strong></p>
+                            <p>Air travel is the fastest and most convenient way to reach the Andaman Islands from Bangalore. Flights connect Bangalore to Port Blair, the capital of Andaman and Nicobar Islands.</p>
+                            <ul class="packages-list-style">
+                                <li>Flights available with one or two stops</li>
+                                <li>Time-efficient and convenient for most travelers</li>
+                                <li>Best option for short and well-planned vacations</li>
+                                <li>Comfortable travel for families and honeymoon couples</li>
+                            </ul>
+
+                            <p><strong>By Sea:</strong></p>
+                            <p>For travelers looking for a unique and relaxed journey, ship travel offers a memorable sea experience before reaching the islands.</p>
+                            <ul class="packages-list-style">
+                                <li>Slow-paced and scenic ocean journey</li>
+                                <li>Enjoy fresh sea breeze and panoramic views</li>
+                                <li>Ideal for travelers preferring a relaxed start</li>
+                                <li>Advance reservation recommended due to limited availability</li>
+                            </ul>
+
+                            <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Bangalore by Flight</h3>
+                            <p>Flight-based Andaman tour packages from Bangalore are ideal for travelers who want to reach the islands quickly and begin sightseeing without delay. These packages ensure smooth travel and well-organized itineraries.</p>
+                            <ul class="packages-list-style">
+                                <li>Airport pickup and guided transfers</li>
+                                <li>Hotel accommodation based on selected package</li>
+                                <li>Visits to popular islands and local attractions</li>
+                                <li>Flexible itinerary with optional activities</li>
+                            </ul>
+                            <p>Package prices vary depending on travel season, hotel category, trip duration, and number of travelers.</p>
+
+                            <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Bangalore by Ship</h3>
+                            <p>Ship-based Andaman packages are suitable for travelers who prefer a calm and leisurely journey before starting their island holiday. After arriving at Port Blair, the focus shifts to sightseeing and relaxation.</p>
+                            <ul class="packages-list-style">
+                                <li>Port arrival assistance and transfers included</li>
+                                <li>Comfortable hotel accommodation</li>
+                                <li>Planned island excursions and beach visits</li>
+                                <li>Relaxed travel schedule for easy exploration</li>
+                            </ul>
+                            <p>Ship schedules and availability depend on the season, so early booking is highly recommended.</p>                       
                         
-                        
-                        <h3 class="fs-6 fw-bold mt-3">Best Time To Visit Andaman Island</h3>
-                        <ul class="packages-list-style">
-                            <li>The best time to visit Andaman & Nicobar Island is between <em>October and May</em>. During these months, the weather is pleasant with calm seas. This time is perfect for sightseeing and water sports activities.</li>
-                            <li>AThe monsoon month that starts from <em>June to September</em> is not recommended as it causes heavy rainfall and might affect ferry schedules and water activities. </li>
-                        </ul>
+                        <h3 class="fs-6 fw-bold mt-2">Best Time to Visit Andaman from Bangalore</h3>
+                            <p>Choosing the right travel season helps you enjoy the Andaman Islands comfortably while making the most of beaches and outdoor activities.</p>
+                            <ul class="packages-list-style">
+                                <li>October to May offers pleasant weather ideal for beach outings and island exploration</li>
+                                <li>Summer months are perfect for water sports like snorkeling and scuba diving</li>
+                                <li>Monsoon season may limit sea-based activities but provides peaceful surroundings</li>
+                                <li>Weather conditions influence sightseeing comfort and water visibility</li>
+                            </ul>
 
                         <h3 class="fs-6 fw-bold mt-3">Top Attractions to see in Andaman Island</h3>
                         
@@ -1777,22 +1809,45 @@ function toggleItinerary(dayNumber) {
                             <li><strong>7 - 10 Days:</strong> Add Baratang, Rangat, and Long Island to your itinerary</li>
                         </ul>
 
-
-                        <h3 class="fs-6 fw-bold mt-3">What Makes Our Andaman Tour Package from Bangalore Different</h3>
+                        <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Bangalore for Family</h3>
+                        <p>Families traveling from Bangalore can enjoy a calm, comfortable, and well-organized holiday in the Andaman Islands. These family-focused tour packages are designed to ensure that every member, from kids to elders, enjoys a joyful and stress-free vacation.</p>
                         <ul class="packages-list-style">
-                            <li>Personal touch in every of our packages, as we design the itineraries based on your preferences and choice.</li>
-                            <li>Covers all the popular and offbeat destinations for a complete Andaman experience.</li>
-                            <li>We give flexibility to choose from budget, mid range and luxury packages.</li>
-                            <li>Special inclusions like photography sessions, candlelight dinners and special deals in water sports activities.</li>
+                            <li>Family-friendly hotel rooms with comfortable amenities</li>
+                            <li>Engaging activities suitable for both kids and adults</li>
+                            <li>Sightseeing destinations that are safe and enjoyable for all age groups</li>
+                            <li>Well-planned breaks to avoid travel fatigue</li>
                         </ul>
+                        <p>Family tour package prices vary depending on room category, number of travelers, and selected travel dates.</p>
 
-                        <h3 class="fs-6 fw-bold mt-3">Travel Tips for Bangaloreans Visiting Andaman islands</h3>
+                        <h3 class="fs-6 fw-bold mt-2">Andaman Tour Packages from Bangalore for Honeymoon</h3>
+                        <p>Couples seeking a peaceful and romantic escape often choose Andaman for its serene beaches, quiet atmosphere, and intimate experiences. Honeymoon packages focus on comfort, privacy, and creating unforgettable memories together.</p>
                         <ul class="packages-list-style">
-                            <li>We recommend you to carry light cotton clothes and beachwear</li>
-                            <li>Kindly book your flight tickets well in advance to get better price</li>
-                            <li>Always keep some cash in hand, as ATM are very limited in remote islands</li>
-                            <li>Do not miss the water sports activities like scuba diving, snorkeling and sea walking.</li>
+                            <li>Romantic beach views and secluded scenic locations</li>
+                            <li>Couple-friendly resorts with beautiful surroundings</li>
+                            <li>Special honeymoon experiences and arrangements</li>
+                            <li>Leisure-focused itineraries for quality time</li>
                         </ul>
+                        <p>Honeymoon package costs may vary based on resort selection, inclusions, and travel season.</p>
+
+                        <h3 class="fs-6 fw-bold mt-2">How to Plan Your Andaman Tour</h3>
+                        <p>Proper planning allows you to enjoy your Andaman holiday to the fullest while avoiding last-minute hassles.</p>
+                        <ul class="packages-list-style">
+                             <li>Finalize your travel dates well in advance</li>
+                             <li>Select your travel mode based on comfort, budget, and available time</li>
+                             <li>Choose accommodation options that suit your travel needs</li>
+                             <li>Plan sightseeing activities according to arrival and departure schedules</li>
+                            </ul>
+
+                        <h3 class="fs-6 fw-bold mt-2">Tips for Smooth Travel</h3>
+                        <p>Being well-prepared always results in a more comfortable and enjoyable travel experience.</p>
+                        <ul class="packages-list-style">
+                             <li>Book flight or ship tickets early to get better availability and prices</li>
+                             <li>Carry all necessary government identity documents</li>
+                             <li>Pack clothing and essentials based on weather conditions and activities</li>
+                             <li>Check local weather updates before starting your journey</li>
+                            </ul>
+
+                            <p><em>Set your travel plan from Bangalore to the Andaman Islands and embrace the waves, sunshine, and unforgettable island moments.</em></p>
 
                         <div class="row mt-3">
                             <div class="col-md-6">
