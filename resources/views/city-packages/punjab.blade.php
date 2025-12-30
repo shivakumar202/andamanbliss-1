@@ -1,13 +1,17 @@
 @extends('layouts.app')
-@section('title', 'Andaman tour packages from Punjab')
-
-@push('styles')
+@section('title', 'Andaman Tour Packages from Punjab | Andaman Bliss')
+@section('keywords', 'best travel agencies in Andaman, Andaman honeymoon packages from Punjab, Andaman tour packages, Andaman trip cost from Punjab, scuba diving in Andaman.')
+@section('description', 'Book your Andaman packages with the best travel agency in Andaman. Explore the best beaches, water sports and sightseeing tours.')
 <!-- Chennai specific CSS -->
 <!-- <link rel="stylesheet" href="{{ asset('site/css/chennai.css') }}"> -->
+ @push('styles')
 <style>
 /* Andaman Honeymoon Packages Styles */
 .chennai-hero {
-    background: radial-gradient(circle at center, rgb(25, 133, 197) 0%, rgb(17, 157, 213) 100%);
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* overlay */ url('../site/img/city-packages/sunset-view.webp'); /* image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -652,6 +656,12 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(253, 126, 20, 0.4);
 }
+.packages-list-style{
+    padding:5px 20px;
+}
+.packages-list-style li {
+    list-style-type: disc;
+}
 
 /* Responsive Table */
 @media (max-width: 1200px) {
@@ -1239,7 +1249,6 @@
     background: #fff;
     border: 1px solid #e9ecef;
     border-radius: 12px;
-    padding: 18px 20px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
@@ -1602,15 +1611,12 @@ function toggleItinerary(dayNumber) {
         <div class="row">
             <div class="col-12">
                 <div class="hero-content">
-                    <div class="hero-badge">HONEYMOON EXPERIENCE</div>
+                    <div class="hero-badge">Experience Comfort</div>
                     <h1 class="hero-title">
-                        Andaman <span class="highlight">Honeymoon Packages</span><br>
-                        – Best Romantic Getaways for Couples
+                        Andaman Holiday Packages from Punjab<span class="highlight"> | Best Travel Agency<span>                     
                     </h1>
                     <p class="hero-subtitle">
-                        Experience the best romantic getaways in the Andaman Islands with our expertly crafted honeymoon
-                        packages—tailored to make your journey as a couple truly unforgettable.
-                    </p>
+                    Book the best Andaman tour packages from Punjab with Andaman Bliss. Explore Havelock, Neil Island and Port Blair. Customized family & honeymoon packages from Chandigarh or Amritsar.</p>
                     <div class="hero-buttons">
                         <a href="#packages" class="hero-cta primary">Explore Packages</a>
                         <a href="#booking" class="hero-cta secondary">Contact Us</a>
@@ -1635,6 +1641,37 @@ function toggleItinerary(dayNumber) {
     </div>
 </section>
 
+
+
+<!-- Modal removed: replaced with inline Read More content -->
+
+<!-- Packages Section - converted to cards -->
+<section id="packages" class="section-padding">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title-h2 text-center">Andaman Tour <span> Packages from Punjab</span></h2>
+            <p>Everything you need to know about planning your trip to the Andaman Islands</p>
+        </div>
+        <div class="activity-grid">
+            @foreach($tours as $tour)
+            <a class="activity-card" href="{{ route('tour.static' ,['slug' => $tour['tourCategory']->slug, 'subslug' => $tour->slug]) }}"
+                style="background-image:url('{{ $tour->tourPhotos[0]->file }}');">
+                <div class="activity-topbar">
+                    <div class="time-badge">{{$tour->nights}} Nights / {{$tour->days}} Days</div>
+                    <span class="book-now-pill">Book Now</span>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-price">Starts from: <span>₹{{ $tour->start_price }}</span> <small>/ per person</small></div>
+                    <div class="activity-title">Andaman {{ $tour->tourCategory->name }}</div>
+                    <div class="activity-subtitle">{{ implode(' & ', $tour->islands_covered ?? []) }}</div>
+                    <div class="inclusions">Inclusion: Stay, Breakfast, Transfers, Sightseeing</div>
+                </div>
+            </a>
+            @endforeach         
+        </div>
+    </div>
+</section>
+
 <!-- Introduction Section -->
 <section class="section-padding" style="background: #f8f9fa;">
     <div class="container">
@@ -1644,49 +1681,174 @@ function toggleItinerary(dayNumber) {
                     style="background: white; padding: 30px 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                     <h2
                         style="color: #333; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; line-height: 1.4;">
-                        Andaman Honeymoon Packages | <span style="color: #fd7e14;">Unforgettable Romantic Escapes for
-                            Couples</span>
+                        Andaman Holiday Packages from Punjab <span style="color: #fd7e14;"> | Explore the Stunning Beaches of Andaman</span> 
                     </h2>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
-                        Thinking about a romantic honeymoon in the beautiful Andaman Islands? Andaman Bliss has got you
-                        covered with different honeymoon packages. Prices start at ₹13,500 for a three-night, four-day
-                        trip. If you're looking for something a bit longer, four-night, five-day packages are between
-                        ₹19,000 and ₹25,000. These deals are great for couples wanting to make some amazing memories in
-                        a lovely place.
-                    </p>
-                    <a href="#" id="readMoreToggle" class="read-more-toggle">Read More</a>
+                    <div>
+                        <h2 class="fw-bold fs-6">Summary</h2>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">
+                      We at Andaman Bliss are specialized in designing <strong>Andaman tour packages from Punjab</strong> to make your Andaman trip unforgettable and memorable. We completely understand that traveling from Punjab to Andaman can be long, so we provide you a complete guidance on choosing the best connecting flights from Delhi or Kolkata. From the moment you land in Port Blair airport, our <strong>Andaman Bliss</strong> team will be there to welcome you and ensure that your on ground experience is smooth, safe and exciting for kid and senior travelers.</p>
+                      
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">
+                      Andaman Bliss, the <strong>best agency in Andaman</strong>, creates many packages to suit your preferences and budget. Our <strong>Andaman honeymoon packages</strong> and family trip are designed to provide you the best island experience. We make sure that our <strong>Andaman trip cost from Punjab</strong> should fit every pocket, with budget friendly packages starting from INR 10,000 to luxury packages that starts from INR 30,000 with luxury accommodation and private cruise like the Makruzz and major sightseeing spots.</p>
+                      
+                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">
+                      We completely understand that a good holiday package depends on a few aspects like finding a delicious North Indian meal when you are far away from home or someone who should be available 24x7 to help you on this trip. Whether you want to try scuba diving at Elephant Beach or want to explore the natural rock bridge on Neil Island or just want to relax on the beaches of Andaman Islands, we at <strong>Andaman Bliss</strong> handle all the logistics like ferry tickets and island transfers. Whether you are traveling for a 5 day trip or a long 8 day adventure. <strong>Andaman Bliss</strong> promises to make your Andaman holiday truly unforgettable and memorable.</p>
 
+                    </div>
+                    <a href="#" id="readMoreToggle" class="read-more-toggle">Read More</a>
                     <div id="readMoreContent" class="read-more-content">
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Why Choose Andaman for Your
-                            Honeymoon?</h6>
-                        <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">The Andaman Islands offer the
-                            perfect blend of pristine beaches, crystal-clear waters, and romantic sunsets that create an
-                            ideal setting for newlyweds. With over 500 islands, each offering unique experiences,
-                            couples can enjoy both adventure and tranquility.</p>
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Package Inclusions:</h6>
-                        <ul style="color: #666; line-height: 1.7; margin-bottom: 20px;">
-                            <li>Round-trip flights from Chennai to Port Blair</li>
-                            <li>Luxury beachfront accommodation with ocean views</li>
-                            <li>All inter-island transfers by ferry and speedboat</li>
-                            <li>Daily breakfast and select romantic dinners</li>
-                            <li>Guided sightseeing tours to major attractions</li>
-                            <li>Water sports activities and snorkeling equipment</li>
-                            <li>24/7 customer support and local assistance</li>
+                        <h3 class="fs-6 mt-3 fw-bold">Andaman Tour Packages from Punjab: Explore the Emerald Greenery Islands with Andaman Bliss 
+                        </h3>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">Forget about the fields of Punjab and enjoy the mesmerizing blue waters of the Bay of Bengal. At <strong>Andaman Bliss</strong>, we completely understand that a vacation for a traveler from Northwest India needs to be seamless, comfortable and enjoyable. Andaman Bliss, which is one of the <strong>best travel agencies in Andaman</strong>, is professional in designing <strong>Andaman tour packages</strong> according to your travel preferences and budget.</p>
+
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">Whether you are looking for <strong>Andaman honeymoon packages from Punjab</strong> or a fun-filled getaway with your loved ones, our curated <strong>Andaman tour packages</strong> ensure a "blissful" experience from the moment you leave your home.</p>
+
+                        <h3 class="fs-6 fw-bold mt-2">Why Book with Andaman Bliss?</h3>
+                        <p>Finding the right travel partner for your Andaman holiday is quite difficult. This is reason why travelers from Punjab trust <strong>Andaman Bliss</strong> for their dream holiday:</p>
+                        <ul class="packages-list-style mb-3">
+                            <li><strong>Local Expertise, Global Standards:</strong> Based right here in Port Blair, we are a native travel agency. We don’t just book hotels; we provide authentic local insights and hidden gems that only a resident would know.</li>
+                            <li><strong>Seamless Punjab-to-Island Connectivity:</strong> We specialize in Punjab to Andaman tour packages with flight, managing layovers and transfers from Chandigarh and Amritsar so you don’t have to worry about logistics.</li>
+                            <li><strong>24/7 On-Ground Support:</strong>From the moment you land at Veer Savarkar International Airport, our dedicated team is available around the clock to assist you with everything from ferry timings to emergency needs.</li>
+                            <li><strong>Transparent Pricing:</strong> We offer the most competitive Andaman trip cost from Punjab with no hidden charges. Our Andaman Bliss team handles everything from entry tickets to inter island transfers.</li>
                         </ul>
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Best Time to Visit:</h6>
-                        <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">October to May is the ideal time
-                            for honeymoon trips to Andaman. The weather is pleasant with calm seas, perfect for water
-                            activities and beach relaxation. Avoid monsoon season (June-September) for the best
-                            experience.</p>
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Special Honeymoon
-                            Experiences:</h6>
-                        <ul style="color: #666; line-height: 1.7; margin-bottom: 0;">
-                            <li>Private candlelight dinner on the beach</li>
-                            <li>Sunset cruise with champagne service</li>
-                            <li>Couple spa treatments with ocean sounds</li>
-                            <li>Private photography sessions at scenic locations</li>
-                            <li>Romantic beach picnics on secluded islands</li>
+                       
+                        <h3 class="fs-6 fw-bold">Why Book Punjab to Andaman Tour Packages with Flight?</h3>
+                            <p>Since, there are no direct flights from Punjab to Port Blair (IXZ), but there are still many options through which you can reach Andaman Islands:</p>
+
+                            <ul class="packages-list-style">
+                            <li><strong>From Chandigarh to Port Blair:</strong> Enjoy a easy and seamless connections via Delhi.</li>
+                            <li><strong>From Amritsar to Port Blair:</strong> Many airlines operates transit options for travelers from the Majha region via Delhi or Kolkata.</li>
+                            <li><strong>Zero Hassle transfers:</strong> Our Andaman Bliss team handles everything from the moment you land like private pickups, luxury ferries (Makruzz/Nautika) and all local transports.</li>
+                            </ul>
+
+                            <p>
+                            <strong>Please Note:</strong> Flight tickets are not included in our <strong>Andaman tour packages</strong>. We are professionals who handle only on ground arrangements like accommodation, ferry transfers, water activities and sightseeing tours. However, our <strong>Andaman Bliss</strong> team can help you to find the best flight routes and timing from Chandigarh or Amritsar to perfectly match your travel itinerary.
+                            </p>
+                                              
+                        <h3 class="fs-6 fw-bold mt-3">Best Time to Visit Andaman Island from Punjab</h3>
+                        <ul class="packages-list-style">
+                            <li><strong>October to May:</strong> This offers pleasant weather and is ideal for sightseeing and water sports activities.</li>
+                            <li>The monsoon month that starts from <em>June to September</em> is not recommended as it causes heavy rainfall and might affect ferry schedules and water activities. </li>
                         </ul>
+
+                        <h3 class="fs-6 fw-bold mt-3">Experience the Best of the Andaman Islands</h3>
+                            <p>The Andaman Islands has a lot more than just beaches, it is a perfect blend of history, adventure and natural wonders. Here is the list of places and experiences that you can expect when you book your Andaman trip.</p>
+                        
+                        <ul class="packages-list-style">
+                            <li><strong>Witness the Historic Cellular Jail:</strong></li>
+                            <p>The <a href="https://andamanbliss.com/islands/port-blair/cellular-jail/" target="_blank">Cellular Jail</a> is located in Port Blair which is also known as the “Kala Pani” and it is one of the must visit destinations for every traveler. The evening Light and Sound show narrates the story of India's freedom struggles.</p>
+                            </ul>
+                        
+                        <ul class="packages-list-style">
+                            <li><strong>Sunset at Radhanagar Beach:</strong></li>
+                            <p><a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/radhanagar-beach/" target="_blank">Radhanagar Beach</a> in Havelock Island is ranked as one of the best beaches in Asia. It is one of the best beaches and highlights of our Andaman honeymoon packages from Punjab.</p>
+                            </ul>
+                        
+                        <ul class="packages-list-style">
+                            <li><strong>Thrilling Water Activities like Scuba Diving & Snorkeling:</strong></li>
+                            <p>You get the chance to experience the underwater world filled with colorful corals and fishes while scuba diving and snorkeling in Havelock and Neil Island. All the <a href="https://andamanbliss.com/activities/" target="_blank">water activities</a> that are done in Andaman Islands are safe and beginner friendly.</p>
+                            </ul>
+
+                        <ul class="packages-list-style">    
+                            <li><strong>Private Cruise Transfers:</strong></li>
+                            <p>Experience luxury on the waves. We book premium seats on private ferries like Makruzz or Nautika. We ensure that all your inter island transfers are fast, air conditioned and scenic.</p>
+                            </ul>
+                       
+                        <ul class="packages-list-style">
+                            <li><strong>The Natural Rock Bridge in Neil Island:</strong></li>
+                            <p>The natural rock bridge which is also known as the “<a href="https://andamanbliss.com/islands/neil-shaheed-dweep/natural-rock/" target="_blank">Howrah Bridge</a>”, is one of the best photography spots and unique beauty of the Andaman Islands.</p>
+                            </ul>
+                        
+                        <ul class="packages-list-style">
+                            <li><strong>Water Sports Activities at Elephant Beach:</strong></li>
+                            <p><a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/elephant-beach/" target="_blank">Elephant Beach</a> in Havelock is one of the popular locations for <a href="https://andamanbliss.com/activities/" target="_blank">water sports activities</a>. You can enjoy a variety of water sports activities like scuba diving, snorkeling, banana boat rides and many more.</p>
+                            </ul>  
+                            
+                        <ul class="packages-list-style">
+                            <li><strong>Explore Ross Island (Netaji Subhash Chandra Bose Island):</strong></li>
+                            <p>Experience the colonial ruins and surround yourself with friendly deer and peacocks and learn about British history.</p>
+                            </ul>
+
+                        <ul class="packages-list-style">   
+                            <li><strong>Enjoy the Luxury Candlelight Dinner:</strong></li>
+                            <p>For couples, we arrange luxury and romantic beachside dinners near the beachside. It is one of the best inclusion in our Andaman honeymoon packages from Punjab.</p>
+                            </ul>
+                      
+                        
+                        <h3 class="fs-6 fw-bold mt-3">Top Andaman Itineraries for Punjab Travelers</h3>
+                            <p>To help you plan your journey, we have designed specialized routes that balance travel time from Punjab with maximum island exploration.</p>
+
+                            <ul class="packages-list-style">
+                            <li><strong>The Quick Island Dip (4 Nights / 5 Days):</strong> Perfect for those flying from Chandigarh. Covers Port Blair’s history and the iconic Radhanagar Beach in Havelock.</li>
+                            <li><strong>The Classic Trio (5 Nights / 6 Days):</strong> Our most popular Andaman tour packages from Punjab for family. The destination includes Port Blair, Havelock and the peaceful Neil Island.</li>
+                            <li><strong>The Tropical Escape (7 Nights / 8 Days):</strong> This package includes North Bay, Ross Island and offers many offbeat spots for a truly unforgettable experience.</li>
+                            </ul>
+
+                            <h3 class="fs-6 fw-bold mt-3">Sample 6 Nights 7 Days Tour Itinerary for Punjabi Travelers</h3>
+                            <ul>
+                            <ul class="styled_li">
+                                <li><strong>Day 1:</strong> Arrive in Port Blair and visit the historical site like <a href="https://andamanbliss.com/islands/port-blair/cellular-jail" target="_blank">Cellular Jail</a> and witness the Light & sound show in the evening.</li>
+                                <li><strong>Day 2:</strong> Take a ferry ride to Havelock island and enjoy the world famous <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/radhanagar-beach" target="_blank">Radhanagar beach</a>. In the evening, explore <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/kalapathar-beach" target="_blank">Kalapathar beach</a> where you can relax and unwind.</li>
+                                <li><strong>Day 3:</strong> On the next day, take a short boat ride to <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/elephant-beach" target="_blank">Elephant beach</a> and enjoy a variety of water sports activities like scuba diving, snorkeling and glass bottom boat rides.</li>
+                                <li><strong>Day 4:</strong> Take a boat ride to Neil island and visit <a href="https://andamanbliss.com/islands/neil-shaheed-dweep/laxmanpur-beach" target="_blank">Laxmanpur beach</a> and <a href="https://andamanbliss.com/islands/neil-shaheed-dweep/natural-rock" target="_blank">Natural Bridge</a>. On the same day, visit Bharatpur beach and take part in a variety of water activities.</li>
+                                <li><strong>Day 5:</strong> On the fifth day, get back to Port Blair and visit Ross and North bay island. In the evening, visit <a href="https://andamanbliss.com/islands/port-blair/chidiatapu" target="_blank">Chidiyatapu beach</a> and enjoy birdwatching.</li>
+                                <li><strong>Day 6:</strong> Visit <a href="https://andamanbliss.com/islands/baratang" target="_blank">Baratang island</a> and explore Limestone cave and Mud volcano.</li>
+                                <li><strong>Day 7:</strong> Departure</li>
+                            </ul>
+                        </ul>
+
+                        
+                        <h3 class="fs-6 fw-bold mt-3">How Many Days Are Sufficient for an Andaman Tour Package</h3>
+                        <ul class="packages-list-style">
+                            <li><strong>5 - 7 Days:</strong> Explore Port Blair, Havelock, and Neil Island</li>
+                            <li><strong>7 - 10 Days:</strong> Add Baratang, Rangat, and Long Island to your itinerary</li>
+                        </ul>
+
+                        <h3 class="fs-6 fw-bold mt-3">Andaman Trip Cost from Punjab</h3>
+                        <p>Your Andaman trip cost from Punjab generally depends on your travel style and duration of your stay.</p>
+
+                        <ul class="packages-list-style">
+                        <li><strong>Budget Bliss:</strong></li>
+                        <p>Our budget tour package usually offers a trip of around 4 to 5 days. The price usually starts around INR 16,000 and goes up to INR 22,000 per person. The budget package usually covers a stay in comfortable 2 to 3 star hotels, complimentary breakfast and basic sightseeing spots.</p>
+                        </ul>
+
+                        <ul class="packages-list-style">
+                        <li><strong>Mid Range Package:</strong></li>
+                        <p>For those families who are looking for a Mid mid-range comfort, the price usually ranges between INR 25,000 to INR 38,000 per person. The Mid Range Package offers you a stay in 3 to 4 stay accommodation, private ferry transfers like Makruzz or Nautika and entry to all the major attractions of Andaman Islands.</p>
+                        </ul>
+
+                        <li><strong>Luxury Retreat:</strong></li>
+                        <p>If you are booking an Andaman honeymoon package from Punjab or a luxury retreat, the cost usually starts from INR 45,000 per person and goes even higher depending on the inclusions.</p>
+                        </ul>
+
+
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h3 class="fs-6 fw-bold">Inclusion:</h3>
+                                <ul class="packages-list-style">
+                                    <li>Luxury accommodation in beachside resorts</li>
+                                    <li>Complimentary breakfast with local delicacies</li>
+                                    <li>Air-conditioned transportation for all transfers</li>
+                                    <li>Guided tour to major attractions</li>
+                                    <li>Airport pick-up & drop</li>
+                                    <li>All inter-island ferry transfers</li>
+                                    <li>Complimentary adventure activities</li>
+                                </ul>
+
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="fs-6 fw-bold">Exclusion:</h3>
+                                <ul class="packages-list-style">
+                                    <li>Airfare to / from Port Blair</li>
+                                    <li>Any kind of personal expenses</li>
+                                    <li>Travel insurance or any other kind of insurance</li>
+                                    <li>Alcoholic beverages</li>
+                                    <li>Activities not mentioned in the package</li>
+                                    <li>Meals other than those specified in the package</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1694,99 +1856,14 @@ function toggleItinerary(dayNumber) {
     </div>
 </section>
 
-<!-- Modal removed: replaced with inline Read More content -->
-
-<!-- Packages Section - converted to cards -->
-<section id="packages" class="section-padding">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-title-h2 text-center">Andaman Honeymoon <span> Packages</span></h2>
-            <p>Everything you need to know about planning your Ross and Smith Islands adventure</p>
-        </div>
-        <div class="activity-grid">
-            <a class="activity-card" href="/andaman-3-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://andamanbliss.com/site/img/scuba-dive-in-india.jpg');">
-                <div class="activity-topbar">
-                    <div class="time-badge">3 Nights / 4 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹35,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Andaman Honeymoon</div>
-                    <div class="activity-subtitle">Port Blair & Havelock</div>
-                    <div class="inclusions">Inclusion: Stay, Breakfast, Transfers, Sightseeing</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-4-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">4 Nights / 5 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹42,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Multi-Island Experience</div>
-                    <div class="activity-subtitle">Port Blair + Havelock + Neil</div>
-                    <div class="inclusions">Inclusion: Hotels, Breakfast, Ferries, Guided Tours</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-5-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1526481280698-906943c9a8be?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">5 Nights / 6 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹52,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Complete Island Tour</div>
-                    <div class="activity-subtitle">Comprehensive Experience</div>
-                    <div class="inclusions">Inclusion: Ross, Baratang, Water Sports</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-6-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">6 Nights / 7 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹62,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Premium Adventure</div>
-                    <div class="activity-subtitle">Luxury Island Experience</div>
-                    <div class="inclusions">Inclusion: Private Cruise, Couple Spa, Sunset</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-7-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">7 Nights / 8 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹75,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Ultimate Paradise</div>
-                    <div class="activity-subtitle">Complete Andaman Exploration</div>
-                    <div class="inclusions">Inclusion: All Major Islands, Activities, Transfers</div>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section (redesigned) -->
+<!-- FAQ Section  -->
 <section class="faq-section section-padding">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <div class="faq-header mb-5">
-                    <h2 class="section-title-h2">Frequently Asked <span>Questions</span></h2>
-                    <p class="faq-subtitle">Everything you need to know about planning your Ross and Smith Islands
-                        adventure
-                    </p>
+                    <h2 class="section-title-h2 text-center">Frequently Asked <span> Questions</span></h2>
+                    <p class="faq-subtitle">Everything you need to know about planning your trip to Andaman Islands From Punjab</p>
                 </div>
             </div>
         </div>
@@ -1799,15 +1876,14 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-route"></i>
                         </div>
-                        <h3>How can I go from Port Blair to thе Ross And Smith In Diglipur?</h3>
+                        <h3>How can I reach Andaman from Punjab?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="faq-answer collapse show" id="faqAnswer1" style="">
-                        <p>To gеt from Port Blair to thе Ross And Smith Island In Diglipur you havе to travеl by road to
-                            Diglipur and thеn a boat ridе from Aеrial Bay Jеtty In Diglipur.</p>
+                        <p>The easiest and simple way to travel is by flight from Chandigarh (IXC) or Amritsar (ATQ). There are no direct flights to Port Blair from Punjab, so you can take a connecting or one stop flight from Delhi or Kolkata. We recommend you to take an early morning flight to Delhi, so that you can reach Andaman Island by afternoon.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq2">
@@ -1816,15 +1892,14 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
-                        <h3>Is it possible for me to spend a night at Ross And Smith Island?</h3>
+                        <h3>What is the average Andaman trip cost from Punjab?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer2">
-                        <p>No, lodging cannot bе providеd on thе twin islands of Ross And Smith Island. Thе majority of
-                            tourists spеnd thе night in Diglipur and visit thе islands during thе day.</p>
+                        <p>The Andaman trip cost from Punjab usually starts from INR 16,000 to INR 22,000 per person for a budget friendly tour package. For a more comfortable mid range package including private ferry and 4 star resorts, the cost may range between INR 30,000 to INR 42,000 per person.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq3">
@@ -1833,55 +1908,65 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-clock"></i>
                         </div>
-                        <h3>What kinds of things can I do at thе Ross And Smith Island?</h3>
+                        <h3>Does Andaman Bliss provide flight tickets from Amritsar or Chandigarh?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer3">
-                        <p>As a tourist you arе ablе to participate in a wide range of activitiеs likе bird watching,
-                            swimming, snorkеling and Ross And Smith Beach еxploration.</p>
+                        <p>Our Andaman tour package does not include flight tickets. We are specialized that handles all the ground arrangements like hotels, private ferries, sightseeing tours and entry permits. However, our Andaman Bliss team will provide you expert consultation on the best flight timing to match your itinerary.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
                 <div class="faq-item" id="faq5">
                     <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer5"
                         aria-expanded="false">
                         <div class="faq-icon">
-                            <i class="fas fa-car"></i>
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>Is camping pеrmittеd on thе Ross And Smith Island?</h3>
+                        <h3>Is vegetarian or North Indian food available for Punjab travelers?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer5">
-                        <p>In an attempt for thе prеsеrvation of thе natural еnvironmеnt that includеs Ross And Smith
-                            Island and camping is usually not allowеd. It is rеcommеndеd that visitors take day visits
-                            and rеturn back to thе accommodation that you takе in Diglipur instеad of staying thе night
-                            at thе twin Island.</p>
+                        <p>At Andaman Bliss, we arrange hotels and restaurants that are well known for their high quality North Indian and vegetarian meals. You will find a variety of food options like Dal Makhani and Panner and many more as well in Port Blair and Havelock Island.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq6">
                     <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer6"
                         aria-expanded="false">
                         <div class="faq-icon">
-                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-hotel"></i>
                         </div>
-                        <h3>Аrе thеrе specific regulations regarding photography on the Ross And Smith Island?</h3>
+                        <h3>Do you offer any specific Andaman honeymoon packages from Punjab for couples?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer6">
-                        <p>Whilе thеrе arеn't any specific regulations rеgarding photography and tourists arе encouraged
-                            to usе sensitivity when shooting pictures and particularly in dеlicatе locations.
-                            Furthermore, it is also imperative that you adhere to еvеry singlе instructions furnished by
-                            local authoritiеs or tour opеrators.</p>
+                        <p>Yes, our Andaman honeymoon packages from Punjab are one of the best choices among many honeymoon couples. Our honeymoon tour package includes romantic inclusions like candlelight dinner on Radhanagar Beach, flower bed decoration and photoshoot to make your Andaman trip together truly memorable and special.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="faq-item" id="faq4">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer4"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Can I book an Andaman family tour package from Punjab for senior citizens?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer4">
+                        <p>Yes, our Andaman tour package from Punjab for family are designed to make your trip relaxed and unforgettable. We prioritize ground floor rooms, elevators and private AC vehicles transfers to make sure your family members can enjoy all the major attractions like the Cellular Jail and other attractions without any physical strains.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq7">
@@ -1890,18 +1975,62 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-hotel"></i>
                         </div>
-                        <h3>Is it possiblе for mе to travеl to Ross And Smith Island and rеturn to Port Blair in thе
-                            samе day?</h3>
+                        <h3>Is a passport or visa required for Indian citizens to visit Andaman?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer7">
-                        <p>Although it is fеasiblе to go from Port Blair to Ross And Smith Island In Diglipur in a samе
-                            day and it еntails a lеngthy road and boat trip. To completely explore and takе in thе
-                            bеauty and charms of thе islands and it is advisеd to book a stay of at lеast a fеw days in
-                            Diglipur.</p>
+                        <p>No, Indian citizens are not allowed to carry a passport or visa to visit the Andaman Islands. However, you are requested to carry a valid government issued photo ID card like Aadhar Card, Voter ID card or Driving License, as it may be needed at the time of airport and hotel check ins.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq8">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer8"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3> What is the cost of water sports activities like Scuba Diving in Andaman?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer8">
+                        <p>The cost of <strong>scuba diving in Andaman</strong> usually ranges from INR 3,500 to 4,500. Other popular activities like Sea Walking will cost you around INR 3,500, Parasailing for around INR 3,200 per person and INR 1,000 for Glass Bottom Boat Ride. We suggest you book your activities with Andaman Bliss in advance to get the best slot and safety standards.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq9">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer9"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>When is the best time for travelers from Punjab to visit Andaman?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer9">
+                        <p>The perfect time to visit Andaman Island from Punjab is from October to May. During this period, the skies are clear with calm seas and perfect to explore the beaches of Andaman Islands.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq10">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer10"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Are there any restricted areas that I should know before visiting the Andaman Islands?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer10">
+                        <p>There are many popular islands like Port Blair, Havelock and Neil Island that are open to all and places like Nicobar Islands are strictly restricted and tourists are not allowed to visit. Andaman Bliss ensures that your itinerary only includes permitted, safe and beautiful destinations to keep your trip hassle free and memorable.</p>
                     </div>
                 </div>
             </div>
@@ -1919,46 +2048,27 @@ function toggleItinerary(dayNumber) {
             <div class="testi-subtitle">Real experiences from real travelers</div>
         </div>
         <div class="testimonials-carousel">
-            <div class="t-card">
+            @foreach($reviews as $review)
+        <div class="t-card p-3">
                 <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
+                    <div class="stars">
+                    @for ($i = 0; $i < 5; $i++)
+                        @if ($i < $review->rating)
+                            <i class="fas fa-star filled-star"></i>
+                        @else
+                            <i class="fas fa-star empty-star"></i>
+                        @endif  
+                    @endfor  
+                    </div>
+                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Google</div>
                 </div>
-                <div class="t-title">Very Good and experience</div>
-                <div class="t-excerpt">Very Good and experience</div>
-                <div class="t-meta"><span>customer,</span><span>June 12</span></div>
+                <div class="t-excerpt">{{ Str::limit($review['comment'],150) }}</div>
+                <div class="t-meta"><span>{{$review['reviewer_name']}},</span><span>{{ \Carbon\carbon::parse($review['review_date'])->format('M Y') }}</span></div>
             </div>
-            <div class="t-card">
-                <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
-                </div>
-                <div class="t-title">Big Deals on AirTickets</div>
-                <div class="t-excerpt">Very good offers on air tickets on last minute bookings</div>
-                <div class="t-meta"><span>Saktha Krishnaan,</span><span>June 12</span></div>
-            </div>
-            <div class="t-card">
-                <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
-                </div>
-                <div class="t-title">Amazing Support</div>
-                <div class="t-excerpt">Found a great deal and super fast confirmation. Highly recommended!</div>
-                <div class="t-meta"><span>Rajesh Kumar,</span><span>June 10</span></div>
-            </div>
-            <div class="t-card">
-                <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
-                </div>
-                <div class="t-title">Smooth Booking</div>
-                <div class="t-excerpt">Quick booking flow and friendly assistance throughout the trip.</div>
-                <div class="t-meta"><span>Anita D.,</span><span>June 8</span></div>
-            </div>
+           @endforeach
         </div>
     </div>
 </section>
-
 <!-- CTA removed to keep testimonials as the last section -->
 
 

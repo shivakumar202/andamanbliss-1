@@ -201,7 +201,6 @@
                     <td><span style="font-family: DejaVu Sans; sans-serif;">&#8377;</span>
                         {{ number_format($payment->tax, 2) }} (inc. gst) </td>
                 </tr>
-
                 <tr>
                     <td colspan="3">Total Amount</td>
                     <td><span style="font-family: DejaVu Sans; sans-serif;">&#8377;</span>

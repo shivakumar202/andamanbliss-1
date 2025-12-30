@@ -22,6 +22,10 @@ RewriteRule ^water-sports/?(.*)$ https://andamanbliss.com/activities/$1 [R=301,L
 # /city-packages/* → /*
 RewriteRule ^city-packages/(.*)$ https://andamanbliss.com/$1 [R=301,L]
 
+
+# /activities/photography-in-andaman/ → /photography-in-andaman
+RewriteRule ^activities/photography-in-andaman/?$ /photography-in-andaman [R=301,L]
+
 RewriteRule ^([^/]*)([0-9]+)nights-?([0-9]+)days/?$ /$1$2-nights-$3-days/ [R=301,L,NC]
 
 
@@ -62,6 +66,7 @@ RewriteCond %{REQUEST_URI} !^/ferry-booking(/.*)?$
 RewriteCond %{REQUEST_URI} !^/booking/confirm(/.*)?$
 RewriteCond %{REQUEST_URI} !^/activity/payment-voucher(/.*)?$
 RewriteCond %{REQUEST_URI} !^/activity/payment/update$
+RewriteCond %{REQUEST_URI} !^/photography-enquiry$
 
 RewriteCond %{REQUEST_URI} !^/contact$
 

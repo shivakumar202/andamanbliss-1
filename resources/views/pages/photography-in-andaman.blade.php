@@ -376,7 +376,7 @@ maternity photography. Capture your precious moments with our professional photo
 }
 
 .hero-title {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -579,7 +579,7 @@ maternity photography. Capture your precious moments with our professional photo
 }
 
 .section-title {
-    font-size: 2.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 20px;
     color: var(--color-heading) !important;
@@ -1536,15 +1536,15 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="hero" class="hero-section">
     <div class="hero-slideshow">
         <div class="hero-slide active">
-            <img src="https://images.unsplash.com/photo-1583878545126-2f1ca0142714?q=80&w=1740&auto=format&fit=crop"
+            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b3.JPG')}}"
                 alt="Professional Photography">
         </div>
         <div class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop&q=80"
+            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b2.JPG')}}"
                 alt="Wedding Photography">
         </div>
         <div class="hero-slide">
-            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1600&auto=format&fit=crop&q=80"
+            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b1.JPG')}}"
                 alt="Beach Photography">
         </div>
     </div>
@@ -1664,7 +1664,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 25px;
@@ -1858,7 +1858,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .hero-title {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .hero-subtitle {
@@ -1906,28 +1906,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="tab-buttons">
                     <button class="tab-btn active" data-tab="wedding">
                         <div class="tab-icon"><i class="fas fa-heart"></i></div>
-                        <span>Wedding</span>
+                        <span>Beach Wedding</span>
                     </button>
                     <button class="tab-btn" data-tab="maternity">
                         <div class="tab-icon"><i class="fas fa-heart"></i></div>
-                        <span>Pre Wedding</span>
+                        <span>Pre-Wedding Shoots</span>
                     </button>
                     <button class="tab-btn" data-tab="beach">
                         <div class="tab-icon"><i class="fas fa-umbrella-beach"></i></div>
-                        <span>Beach</span>
+                        <span>Couple Stories</span>
                     </button>
                     <button class="tab-btn" data-tab="event">
                         <div class="tab-icon"><i class="fas fa-glass-cheers"></i></div>
-                        <span>Event</span>
+                        <span>Honeymoon Moments</span>
                     </button>
                     
                     <button class="tab-btn" data-tab="fashion">
                         <div class="tab-icon"><i class="fas fa-tshirt"></i></div>
-                        <span>Fashion</span>
+                        <span>Proposal Shoots</span>
                     </button>
                     <button class="tab-btn" data-tab="corporate">
                         <div class="tab-icon"><i class="fas fa-building"></i></div>
-                        <span>Corporate</span>
+                        <span>Family & Friends</span>
                     </button>
                 </div>
 
@@ -1973,13 +1973,13 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <a href="#booking" class="service-cta">Book This Package</a>
                             </div>
                             <div class="service-detail-image">
-                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop&q=80"
+                                <img src="{{ asset('site/img/photoshoot-in-andaman/honeymoon_photoshoot.webp') }}"
                                     alt="Wedding Photography">
                             </div>
                         </div>
                     </div>
 
-                    <div class="tab-content" data-tab="beach">
+                    <div class="tab-content" data-tab="Couple Stories">
                         <div class="service-detail">
                             <div class="service-detail-content">
                                 <h3>Beach Photography</h3>
@@ -2028,7 +2028,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="tab-content" data-tab="event">
                         <div class="service-detail">
                             <div class="service-detail-content">
-                                <h3>Event Photography</h3>
+                                <h3>Honeymoon Photography</h3>
                                 <p>From corporate gatherings to family celebrations, our event photography services
                                     ensure every important moment is beautifully preserved with attention to detail and
                                     candid emotions.</p>
@@ -2065,7 +2065,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <a href="#booking" class="service-cta">Book This Package</a>
                             </div>
                             <div class="service-detail-image">
-                                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1600&auto=format&fit=crop&q=80"
+                                <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b2.JPG')}}"
                                     alt="Event Photography">
                             </div>
                         </div>
@@ -2109,7 +2109,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <a href="#booking" class="service-cta">Book This Package</a>
                             </div>
                             <div class="service-detail-image">
-                                <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=1600&auto=format&fit=crop&q=80"
+                                <img src="{{asset('site/img/photoshoot-in-andaman/home_honeymoon1 (2).webp')}}"
                                     alt="Maternity Photography">
                             </div>
                         </div>
@@ -2119,7 +2119,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="service-detail">
                             <div class="service-detail-content">
                                 <div class="service-badge">New Service</div>
-                                <h3>Fashion Photography</h3>
+                                <h3>Proposal Shoots</h3>
                                 <p>Showcase your style with our professional fashion photography services, perfect for
                                     portfolios and brand campaigns. We bring creative direction and technical expertise
                                     to every shoot.</p>
@@ -2156,7 +2156,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <a href="#booking" class="service-cta">Book This Package</a>
                             </div>
                             <div class="service-detail-image">
-                                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&auto=format&fit=crop&q=80"
+                                <img src="{{asset('site/img/photoshoot-in-andaman/honeymoon_photoshoot.webp')}}"
                                     alt="Fashion Photography">
                             </div>
                         </div>
@@ -2165,7 +2165,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="tab-content" data-tab="corporate">
                         <div class="service-detail">
                             <div class="service-detail-content">
-                                <h3>Corporate Photography</h3>
+                                <h3>Family Photography</h3>
                                 <p>Professional photography for business needs, including corporate portraits, team
                                     photos, and workplace environment shots. We help you create a professional image for
                                     your brand.</p>
@@ -2202,7 +2202,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <a href="#booking" class="service-cta">Book This Package</a>
                             </div>
                             <div class="service-detail-image">
-                                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600&auto=format&fit=crop&q=80"
+                                <img src="{{asset ('site/img/photoshoot-in-andaman/home_family1.jpg')}}"
                                     alt="Corporate Photography">
                             </div>
                         </div>
@@ -2265,7 +2265,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .section-title {
-    font-size: 2.8rem;
+    font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 25px;
     color: #333;
@@ -2340,7 +2340,7 @@ document.addEventListener('DOMContentLoaded', function() {
     background: none;
     border: none;
     padding: 15px 20px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: #777;
     display: flex;
@@ -2447,7 +2447,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .service-detail-content h3 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     color: #333;
@@ -2508,13 +2508,13 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .price {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: rgb(17, 157, 213);
 }
 
 .price-text {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #777;
 }
 
@@ -2627,7 +2627,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .section-title {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
     }
 
     .tab-btn {
@@ -2647,7 +2647,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .price {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -2673,11 +2673,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="container position-relative">
         <div class="row justify-content-center text-center min-vh-75 align-items-center">
             <div class="col-lg-8 text-white">
-                <h2 class="display-3 fw-bold mb-4 text-white">Wedding Films</h2>
+                <h2 class="fs-4 fw-bold mb-4 text-white">Wedding Films</h2>
                 <p class="lead mb-5 text-white">Let us transform your special moments into timeless memories through our
                     artistic
                     lens</p>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                <a href="https://www.youtube.com/@andamanbliss"
                     class="btn btn-outline-light btn-lg rounded-pill px-5 py-3 watch-btn" target="_blank">
                     <i class="fas fa-play me-2"></i> Watch Our Films
                 </a>
@@ -2808,7 +2808,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
             <div class="wedding-look-image">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&auto=format&fit=crop&q=80"
+                <img src="{{asset('site/img/photoshoot-in-andaman/home_honeymoon3.webp')}}"
                     alt="Wedding Photography">
                 <div class="image-badge">Premium Quality</div>
             </div>
@@ -2866,7 +2866,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .wedding-look-title {
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 30px;
     color: #333;
@@ -3127,7 +3127,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="video-overlay">
-                                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="play-button"
+                                    <a href="https://www.youtube.com/@andamanbliss" class="play-button"
                                         target="_blank">
                                         <i class="fas fa-play"></i>
                                     </a>
@@ -3168,7 +3168,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             are top wedding photographers in kolkata.
                             </p>
                             <div class="films-actions mt-5 d-flex flex-wrap gap-3">
-                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn-primary-action"
+                                <a href="https://www.youtube.com/@andamanbliss" class="btn-primary-action"
                                     target="_blank">
                                     <i class="fas fa-play me-2"></i> Watch Sample Films
                                 </a>
@@ -3240,21 +3240,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-6">
                     <div class="about-image-container">
                         <div class="about-main-image">
-                            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/video2.jpg')}}"
                                 alt="Lead Photographer" class="img-fluid rounded-4">
                             <div class="experience-badge">
                                 <span class="exp-number">10+</span>
                                 <span class="exp-text">Years Experience</span>
                             </div>
                         </div>
-                        <div class="about-floating-image about-floating-1">
+                        <!-- <div class="about-floating-image about-floating-1">
                             <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop&q=80"
                                 alt="Wedding Photography" class="img-fluid rounded-3">
                         </div>
                         <div class="about-floating-image about-floating-2">
                             <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=800&auto=format&fit=crop&q=80"
                                 alt="Beach Photography" class="img-fluid rounded-3">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -3370,38 +3370,56 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 <!-- Booking Section with Parallax -->
-<section class="booking-section parallax-section py-5 mb-5"
+<section class="booking-section parallax-section py-5 mb-5 " id="booking"
     style="background-image: url('https://plus.unsplash.com/premium_photo-1682092597591-81f59c80d9ec?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
     <div class="overlay"></div>
     <div class="container position-relative">
         <div class="row justify-content-center">
             <div class="col-lg-8 text-center text-white mb-5">
-                <h2 class="display-6 fw-bold mb-4 text-white">Let's Plan Your Photography</h2>
+                <h2 class="fs-3 fw-bold mb-4 text-white">Let's Plan Your Photography</h2>
                 <p class="lead text-white">We offer a range of photography with different price segments. Let us know
                     your
                     requirements and budget and discuss everything to get you the Best!</p>
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <form class="booking-form  p-4 rounded-4 ">
+            <div class="col-lg-12">
+                <form class="booking-form  p-4 rounded-4 " method="post" action="{{ route('photo-enq') }}" >
+                    @csrf
                     <div class="row align-items-center gx-3">
                         <div class="col">
-                            <select class="form-select form-select-lg rounded-pill">
+                            <select class="form-select form-select-lg rounded-pill" name="type" required>
                                 <option selected>Select Type of Shoot</option>
                                 <option>Wedding Photography</option>
                                 <option>Pre-wedding Shoot</option>
                                 <option>Event Photography</option>
                             </select>
+                            @error('type')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="col">
                             <input type="date" class="form-control form-control-lg rounded-pill"
-                                placeholder="Select Date">
+                                placeholder="Select Date" name="date" required>
+                                 @error('date')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control form-control-lg rounded-pill"
+                                placeholder="Enter Name" name="name" required>
+                                 @error('name')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
                         <div class="col">
                             <input type="tel" class="form-control form-control-lg rounded-pill"
-                                placeholder="Phone Number">
+                                placeholder="Phone Number" name="contact" required>
+                                 @error('contact')
+                            <span class="text-danger">{{$message}}</span>
+                            @enderror
                         </div>
+                        <input type="text" hidden name="website" id="website">
                         <div class="col-auto">
                             <button type="submit" class="btn btn-lg rounded-pill px-4"
                                 style="background-color: #fd6e0f; color:#fff;">Send Enquiry</button>
@@ -3429,7 +3447,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=1600&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/home_honeymoon5.webp')}}"
                                 alt="Maternity Photography" class="img-fluid">
                             <div class="service-tag">Popular</div>
                         </div>
@@ -3437,7 +3455,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="service-icon">
                                 <i class="fas fa-baby"></i>
                             </div>
-                            <h3 class="service-title">Maternity Photography</h3>
+                            <h3 class="service-title">Beach Wedding</h3>
                             <p class="service-description">Capture the beautiful journey of motherhood with our
                                 professional maternity photoshoots.</p>
                             <ul class="service-features">
@@ -3455,7 +3473,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1600&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b4.webp')}}"
                                 alt="Corporate Events" class="img-fluid">
                             <div class="service-tag service-tag-blue">Business</div>
                         </div>
@@ -3463,7 +3481,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="service-icon">
                                 <i class="fas fa-briefcase"></i>
                             </div>
-                            <h3 class="service-title">Corporate Events</h3>
+                            <h3 class="service-title">Pre-Wedding Shoots</h3>
                             <p class="service-description">Professional photography coverage for all your business
                                 events and corporate functions.</p>
                             <ul class="service-features">
@@ -3481,7 +3499,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/honeymoon_photoshoot.webp')}}"
                                 alt="Fashion Photography" class="img-fluid">
                             <div class="service-tag service-tag-orange">Creative</div>
                         </div>
@@ -3489,7 +3507,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="service-icon">
                                 <i class="fas fa-tshirt"></i>
                             </div>
-                            <h3 class="service-title">Fashion Photography</h3>
+                            <h3 class="service-title">Couple Shoots</h3>
                             <p class="service-description">Showcase your style with professional fashion photography for
                                 portfolios and brands.</p>
                             <ul class="service-features">
@@ -3507,7 +3525,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b2.JPG')}}"
                                 alt="Pre-wedding Photography" class="img-fluid">
                             <div class="service-tag">Popular</div>
                         </div>
@@ -3515,7 +3533,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="service-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
-                            <h3 class="service-title">Pre-wedding Shoots</h3>
+                            <h3 class="service-title">Honeymoon Moments</h3>
                             <p class="service-description">Capture your love story with stunning pre-wedding photography
                                 in beautiful locations.</p>
                             <ul class="service-features">
@@ -3533,7 +3551,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b5.webp')}}"
                                 alt="Beach Photography" class="img-fluid">
                             <div class="service-tag service-tag-blue">Outdoor</div>
                         </div>
@@ -3541,7 +3559,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="service-icon">
                                 <i class="fas fa-umbrella-beach"></i>
                             </div>
-                            <h3 class="service-title">Beach Photography</h3>
+                            <h3 class="service-title">Proposal Shoots</h3>
                             <p class="service-description">Stunning beach photography sessions capturing the beauty of
                                 Andaman's pristine shores.</p>
                             <ul class="service-features">
@@ -3559,7 +3577,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b1.JPG')}}"
                                 alt="Event Photography" class="img-fluid">
                             <div class="service-tag service-tag-orange">Events</div>
                         </div>
@@ -3567,7 +3585,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="service-icon">
                                 <i class="fas fa-glass-cheers"></i>
                             </div>
-                            <h3 class="service-title">Special Events</h3>
+                            <h3 class="service-title">Family & Friends</h3>
                             <p class="service-description">Professional photography for birthdays, anniversaries, and
                                 all your special celebrations.</p>
                             <ul class="service-features">
@@ -3616,14 +3634,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 <button class="filter-btn" data-filter="wedding">
                     <i class="fas fa-heart"></i> Wedding
                 </button>
-                <button class="filter-btn" data-filter="beach">
-                    <i class="fas fa-umbrella-beach"></i> Beach
+                <button class="filter-btn" data-filter="beach wedding">
+                    <i class="fas fa-umbrella-beach"></i> Beach Wedding
                 </button>
-                <button class="filter-btn" data-filter="events">
-                    <i class="fas fa-glass-cheers"></i> Events
+                <button class="filter-btn" data-filter="family & friends">
+                    <i class="fas fa-glass-cheers"></i> Family & Friends 
                 </button>
-                <button class="filter-btn" data-filter="portrait">
-                    <i class="fas fa-user"></i> Portrait
+                <button class="filter-btn" data-filter="proposal shoots">
+                    <i class="fas fa-user"></i> Proposal Shoots
                 </button>
             </div>
         </div>
@@ -3635,15 +3653,15 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Item 1 -->
             <div class="portfolio-item" data-category="wedding">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/wedding_photoshoot.JPG')}}"
                         class="portfolio-link" data-title="Pre-wedding Romance" data-category="Wedding">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/wedding_photoshoot.JPG')}}"
                                 alt="Pre-wedding Shoot">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
                                     <div class="portfolio-category">Wedding</div>
-                                    <h3 class="portfolio-title">Pre-wedding Romance</h3>
+                                    <h3 class="portfolio-title">Wedding Romance</h3>
                                     <div class="portfolio-zoom">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
@@ -3657,10 +3675,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Item 2 -->
             <div class="portfolio-item" data-category="wedding">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/home_honeymoon1 (2).webp')}}"
                         class="portfolio-link" data-title="Beachside Ceremony" data-category="Wedding">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/home_honeymoon1 (2).webp')}}"
                                 alt="Wedding Photography">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
@@ -3677,17 +3695,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Item 3 -->
-            <div class="portfolio-item" data-category="beach">
+            <div class="portfolio-item" data-category="beach wedding">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/photoshoot_b1.JPG')}}"
                         class="portfolio-link" data-title="Sunset Paradise" data-category="Beach">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b1.JPG')}}"
                                 alt="Beach Photography">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
-                                    <div class="portfolio-category">Beach</div>
-                                    <h3 class="portfolio-title">Sunset Paradise</h3>
+                                    <div class="portfolio-category">Beach Wedding</div>
+                                    <h3 class="portfolio-title">Beach Wedding</h3>
                                     <div class="portfolio-zoom">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
@@ -3699,17 +3717,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Item 4 -->
-            <div class="portfolio-item" data-category="events">
+            <div class="portfolio-item" data-category="family & friends">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/photoshoot_b2.JPG')}}"
                         class="portfolio-link" data-title="Corporate Gathering" data-category="Events">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b2.JPG')}}"
                                 alt="Corporate Events">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
-                                    <div class="portfolio-category">Events</div>
-                                    <h3 class="portfolio-title">Corporate Gathering</h3>
+                                    <div class="portfolio-category">Family & Friends</div>
+                                    <h3 class="portfolio-title">Family Moments</h3>
                                     <div class="portfolio-zoom">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
@@ -3721,17 +3739,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Item 5 -->
-            <div class="portfolio-item" data-category="portrait">
+            <div class="portfolio-item" data-category="proposal shoots">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/photoshoot_b4.webp')}}"
                         class="portfolio-link" data-title="Fashion Portrait" data-category="Portrait">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b4.webp')}}"
                                 alt="Fashion Photography">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
-                                    <div class="portfolio-category">Portrait</div>
-                                    <h3 class="portfolio-title">Fashion Portrait</h3>
+                                    <div class="portfolio-category">Proposal Shoots</div>
+                                    <h3 class="portfolio-title">Moment of Love</h3>
                                     <div class="portfolio-zoom">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
@@ -3743,17 +3761,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Item 6 -->
-            <div class="portfolio-item" data-category="portrait">
+            <div class="portfolio-item" data-category="beach wedding">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/photoshoot_b5.webp')}}"
                         class="portfolio-link" data-title="Maternity Moments" data-category="Portrait">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/photoshoot_b5.webp')}}"
                                 alt="Maternity Photography">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
-                                    <div class="portfolio-category">Portrait</div>
-                                    <h3 class="portfolio-title">Maternity Moments</h3>
+                                    <div class="portfolio-category">Beach Wedding</div>
+                                    <h3 class="portfolio-title">Romatic Couples</h3>
                                     <div class="portfolio-zoom">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
@@ -3765,17 +3783,17 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Item 7 -->
-            <div class="portfolio-item" data-category="beach">
+            <div class="portfolio-item" data-category="beach wedding">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1520942702018-0862200e6873?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/home_honeymoon5.webp')}}"
                         class="portfolio-link" data-title="Golden Hour" data-category="Beach">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1520942702018-0862200e6873?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/home_honeymoon5.webp')}}"
                                 alt="Beach Sunset">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
-                                    <div class="portfolio-category">Beach</div>
-                                    <h3 class="portfolio-title">Golden Hour</h3>
+                                    <div class="portfolio-category">Beach Wedding</div>
+                                    <h3 class="portfolio-title">Love Moments</h3>
                                     <div class="portfolio-zoom">
                                         <i class="fas fa-search-plus"></i>
                                     </div>
@@ -3787,16 +3805,16 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
 
             <!-- Item 8 -->
-            <div class="portfolio-item" data-category="events">
+            <div class="portfolio-item" data-category="proposal shoots">
                 <div class="portfolio-card">
-                    <a href="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=1200&auto=format&fit=crop&q=80"
+                    <a href="{{asset('site/img/photoshoot-in-andaman/wedding_photoshoot2.JPG')}}"
                         class="portfolio-link" data-title="Celebration Moments" data-category="Events">
                         <div class="portfolio-image">
-                            <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&auto=format&fit=crop&q=80"
+                            <img src="{{asset('site/img/photoshoot-in-andaman/wedding_photoshoot2.JPG')}}"
                                 alt="Event Photography">
                             <div class="portfolio-overlay">
                                 <div class="portfolio-info">
-                                    <div class="portfolio-category">Events</div>
+                                    <div class="portfolio-category">Proposal Shoots</div>
                                     <h3 class="portfolio-title">Celebration Moments</h3>
                                     <div class="portfolio-zoom">
                                         <i class="fas fa-search-plus"></i>
@@ -3961,7 +3979,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .service-title {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #333;
     margin-bottom: 15px;
@@ -4063,7 +4081,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .service-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .service-description {
@@ -4177,7 +4195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .about-title {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #333;
     margin-bottom: 1.5rem;
@@ -4436,7 +4454,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .films-title {
     color: rgb(17, 157, 213);
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
@@ -4630,7 +4648,7 @@ document.addEventListener('DOMContentLoaded', function() {
     padding: 15px 20px;
     border-radius: 50px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     border: 1px solid rgba(0, 0, 0, 0.03);
 }
@@ -5596,7 +5614,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .pricing-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #333;
     display: block !important;
@@ -5608,13 +5626,13 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .price-value {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #fd6e0f;
 }
 
 .price-duration {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #777;
 }
 
@@ -5718,11 +5736,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     .pricing-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .price-value {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 }
 

@@ -97,7 +97,9 @@
                             </div>
                             <div class="meta-text">
                                 <span class="meta-label">Location</span>
-                                <span class="meta-value">{{ ucwords($activity->location) }}</span>
+<span class="meta-value">
+    {{ $activity->location ? ucwords($activity->location) : 'N/A' }}
+</span>
                             </div>
                         </div>
 

@@ -20,6 +20,7 @@ use App\Models\IslandLocation;
 use App\Models\ReviewImage;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
+use Livewire\Attributes\Validate;
 
 class HomeController extends Controller
 {
@@ -460,11 +461,66 @@ class HomeController extends Controller
                 ], $statusCode);
             }
 
-            return back()
-                ->with('success', __('Enquiry form submitted successfully!'));
+            return back()->with('success', __('Enquiry form submitted successfully!'));
         }
 
         return view('pages.contact');
+    }
+
+
+
+    public function photoEnq(Request $request)
+    {
+
+        if (!$request->has('website') || !empty($request->website)) {
+                return back()->with('error', 'Spam detected. Submission blocked.');
+            }
+
+            foreach ($request->all() as $key => $value) {
+                if (is_string($value) && preg_match('/<[^>]*>/', $value)) {
+                    return back()->with('error', 'Spam detected. HTML input is not allowed.');
+                }
+            }
+
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
+                'contact' => 'required|digits:10',
+                'date' => 'date|date_format:Y-m-d|after:'. date('Y-m-d'),
+                'type' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
+            ]);
+
+            if ($validator->fails()) {
+                return back()->withInput()->withErrors($validator);
+            }
+
+            $mailData['subject'] = $request->subject ?? '📨 Photoshoot enquiry';
+            $mailData['email'] = env('MAIL_FROM_ADDRESS', 'info@andamanbliss.com');
+            $mailData['name'] = env('MAIL_FROM_NAME', 'AndamanBliss');
+            $mailData['body'] = "";
+            if ($request->name) {
+                $mailData['body'] .= "Name: {$request->name}<br/>";
+            }
+           
+            if ($request->contact) {
+                $mailData['body'] .= "Mobile: {$request->code}-{$request->contact}<br/>";
+            }
+            if ($request->type) {
+                $mailData['body'] .= "Shoot Type: {$request->type}<br/>";
+            }
+            if ($request->date) {
+                $mailData['body'] .= "Date: {$request->date}<br/>";
+            }
+            $mailData['info'] = 'Note: don\'t share your login credentials & keep it confedential.';
+
+            \Mail::send('emails.template', $mailData, function ($message) use ($mailData) {
+                $message->subject($mailData['subject'])
+                    // ->to($mailData['email'], $mailData['name'])
+                    ->to('info@andamanbliss.com')
+                    ->cc(['amitmandal@andamanbliss.com']);
+            });
+
+            return back()->with('success', __('Enquiry form submitted successfully!'));
+
     }
 
 

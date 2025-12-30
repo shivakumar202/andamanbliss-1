@@ -1,13 +1,17 @@
 @extends('layouts.app')
-@section('title', 'Andaman tour packages from Uttarakhand')
-
+@section('title', 'Book Your Andaman Tour Package from Uttarakhand Today')
+@section('keywords', 'Andaman Nicobar tour package, best travel agencies in Andaman, Andaman tour package from Uttarakhand, Andaman tour package for family, top travel agencies in Andaman, Andaman tour itinerary')
+@section('description', 'Explore the best Andaman tour packages from Uttarakhand with Andaman Bliss. Enjoy beaches, water sports, family activities and hassle free travel.')
 @push('styles')
 <!-- Chennai specific CSS -->
 <!-- <link rel="stylesheet" href="{{ asset('site/css/chennai.css') }}"> -->
 <style>
 /* Andaman Honeymoon Packages Styles */
 .chennai-hero {
-    background: radial-gradient(circle at center, rgb(25, 133, 197) 0%, rgb(17, 157, 213) 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* overlay */ url('../site/img/city-packages/sunset3.jpg'); /* image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 80vh;
     display: flex;
     align-items: center;
@@ -652,6 +656,12 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(253, 126, 20, 0.4);
 }
+.packages-list-style{
+    padding:5px 20px;
+}
+.packages-list-style li {
+    list-style-type: disc;
+}
 
 /* Responsive Table */
 @media (max-width: 1200px) {
@@ -1239,7 +1249,6 @@
     background: #fff;
     border: 1px solid #e9ecef;
     border-radius: 12px;
-    padding: 18px 20px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
@@ -1602,14 +1611,12 @@ function toggleItinerary(dayNumber) {
         <div class="row">
             <div class="col-12">
                 <div class="hero-content">
-                    <div class="hero-badge">HONEYMOON EXPERIENCE</div>
+                    <div class="hero-badge">Experience Comfort</div>
                     <h1 class="hero-title">
-                        Andaman <span class="highlight">Honeymoon Packages</span><br>
-                        – Best Romantic Getaways for Couples
+                        Andaman Tour Package from Uttarakhand<span class="highlight"> | Best Deals from Dehradun</span>                     
                     </h1>
                     <p class="hero-subtitle">
-                        Experience the best romantic getaways in the Andaman Islands with our expertly crafted honeymoon
-                        packages—tailored to make your journey as a couple truly unforgettable.
+                      Planning an Andaman trip from Uttarakhand? Learn how to reach Andaman islands from Dehradun via flights, best routes, travel tips and connection for a smooth journey.
                     </p>
                     <div class="hero-buttons">
                         <a href="#packages" class="hero-cta primary">Explore Packages</a>
@@ -1635,6 +1642,39 @@ function toggleItinerary(dayNumber) {
     </div>
 </section>
 
+
+
+<!-- Modal removed: replaced with inline Read More content -->
+
+<!-- Packages Section - converted to cards -->
+<section id="packages" class="section-padding">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-title-h2 text-center">Andaman Tour <span> Packages from Uttarakhand</span></h2>
+            <p>Everything you need to know about planning your trip to the Andaman Islands</p>
+        </div>
+        <div class="activity-grid">
+            @foreach($tours as $tour)
+            <a class="activity-card" href="{{ route('tour.static' ,['slug' => $tour['tourCategory']->slug, 'subslug' => $tour->slug]) }}"
+                style="background-image:url('{{ $tour->tourPhotos[0]->file }}');">
+                <div class="activity-topbar">
+                    <div class="time-badge">{{$tour->nights}} Nights / {{$tour->days}} Days</div>
+                    <span class="book-now-pill">Book Now</span>
+                </div>
+                <div class="activity-content">
+                    <div class="activity-price">Starts from: <span>₹{{ $tour->start_price }}</span> <small>/ per person</small></div>
+                    <div class="activity-title">Andaman {{ $tour->tourCategory->name }}</div>
+                    <div class="activity-subtitle">{{ implode(' & ', $tour->islands_covered ?? []) }}</div>
+                    <div class="inclusions">Inclusion: Stay, Breakfast, Transfers, Sightseeing</div>
+                </div>
+            </a>
+            @endforeach
+
+         
+        </div>
+    </div>
+</section>
+
 <!-- Introduction Section -->
 <section class="section-padding" style="background: #f8f9fa;">
     <div class="container">
@@ -1644,49 +1684,216 @@ function toggleItinerary(dayNumber) {
                     style="background: white; padding: 30px 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                     <h2
                         style="color: #333; font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; line-height: 1.4;">
-                        Andaman Honeymoon Packages | <span style="color: #fd7e14;">Unforgettable Romantic Escapes for
-                            Couples</span>
+                        How to Plan Your Andaman trip from Uttarakhand<span style="color: #fd7e14;"> | A Complete Travel Guide</span> 
                     </h2>
-                    <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
-                        Thinking about a romantic honeymoon in the beautiful Andaman Islands? Andaman Bliss has got you
-                        covered with different honeymoon packages. Prices start at ₹13,500 for a three-night, four-day
-                        trip. If you're looking for something a bit longer, four-night, five-day packages are between
-                        ₹19,000 and ₹25,000. These deals are great for couples wanting to make some amazing memories in
-                        a lovely place.
-                    </p>
+                    <div>
+                        <h2 class="fw-bold fs-6">Summary</h2>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">
+                      Andaman Island offers one of the refreshing Andaman vacation for families, couples and solo travelers. With expert tour planner like <strong>Andaman Bliss</strong>, your Andaman vacation will become smooth, comfortable and worry free. The Andaman Islands are famous for their clean beaches, clear blue water, rich history and vibrant marine life. The Andaman islands are one of the safest and less crowded destinations which is perfect for honeymooners, families and nature lovers who are traveling from Uttarakhand.
+                        </p>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">
+                      Traveling from Uttarakhand is very easy and convenient as it offers connecting flights via Delhi, Chennai or Kolkata. Our Andaman Nicobar tour package covers all the famous destinations like <strong>Port Blair</strong>, <strong>Havelock Island</strong>, <strong>Neil Island</strong>, <strong>Baratang</strong> and <strong>Diglipur</strong>. From <a href="https://andamanbliss.com/islands/port-blair/cellular-jail/" target="_blank">Cellular Jail</a> and <a href="https://andamanbliss.com/islands/port-blair/ross-island/" target="_blank">Ross Island</a> to <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/radhanagar-beach/" target="_blank">Radhanagar Beach</a> and <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/elephant-beach/" target="_blank">Elephant Beach</a>, each and every destination offers a unique island experience. Adventure lovers can enjoy many exciting <strong><a href="https://andamanbliss.com/activities/" target="_blank">water activities</a></strong> like scuba diving, snorkeling and sea walking whereas families can enjoy glass bottom boat ride and semi submarine ride because it is safe for all age groups. The best time to visit Andaman from Uttarakhand is between <em>October and May</em>, as it offers one of the best times to participate in water sports activities.
+                        </p>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">
+                      Book with <strong>Andaman Bliss</strong>, one of the <strong>best travel agencies in Andaman</strong> as we provide local expertise, personalized itineraries, transparent pricing and 24x7 customer support to make your Andaman trip truly memorable and unforgettable.
+                        </p>
+                    </div>
                     <a href="#" id="readMoreToggle" class="read-more-toggle">Read More</a>
-
                     <div id="readMoreContent" class="read-more-content">
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Why Choose Andaman for Your
-                            Honeymoon?</h6>
-                        <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">The Andaman Islands offer the
-                            perfect blend of pristine beaches, crystal-clear waters, and romantic sunsets that create an
-                            ideal setting for newlyweds. With over 500 islands, each offering unique experiences,
-                            couples can enjoy both adventure and tranquility.</p>
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Package Inclusions:</h6>
-                        <ul style="color: #666; line-height: 1.7; margin-bottom: 20px;">
-                            <li>Round-trip flights from Chennai to Port Blair</li>
-                            <li>Luxury beachfront accommodation with ocean views</li>
-                            <li>All inter-island transfers by ferry and speedboat</li>
-                            <li>Daily breakfast and select romantic dinners</li>
-                            <li>Guided sightseeing tours to major attractions</li>
-                            <li>Water sports activities and snorkeling equipment</li>
-                            <li>24/7 customer support and local assistance</li>
+                        <h3 class="fs-6 mt-3 fw-bold">Andaman Holiday Packages from Uttarakhand | Andaman Bliss
+                        </h3>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">Imagine waking up to the cool breeze of the Himalayas and just after a few hours, feel the warm, sea kissed breeze of the Bay of Bengal. If you are ready to leave the mountain and want to surround yourself with the crystal clear water, our <strong>Andaman tour package from Uttarakhand</strong> is the ultimate tropical island vacation that you have been thinking of.</p>
+                        <p style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px; text-align:justify">Whether you are looking for an <strong><a href="https://andamanbliss.com/andaman-family-packages/" target="_blank">Andaman tour package for family</a></strong> or a solo adventure traveler who wants to dive deep into the deep blue water, then Andaman Island offers you a world full of wonders. To make sure your trip is easy and seamless, we have presented you this guide with insider tips from one of the <strong>top travel agencies in Andaman</strong>, <strong>Andaman Bliss</strong>.</p>
+
+                        <h3 class="fs-6 fw-bold mt-2">Why Choose Andaman Island for Your Next Vacation from Uttarakhand?</h3>
+                        <p>The Andaman Islands are not just a destination, instead it is an experience that you will never forget. This is the reason why many travelers from Uttarakhand love visiting Andaman Islands:</p>
+                        <ul class="packages-list-style mb-3">
+                            <li>Crystal clear beaches and calm bluish ocean.</li>
+                            <li>Clean, peaceful and uncrowded destinations.</li>
+                            <li>Andaman Island is perfect for families, honeymooners and nature lovers.</li>
+                            <li>Affordable Pricing with No Hidden Cost.</li>
+                            <li>Andaman Island has rich history, marine life and island culture.</li>
+                            <li>It is considered as one of India's safest and most scenic holiday destinations.</li>
                         </ul>
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Best Time to Visit:</h6>
-                        <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">October to May is the ideal time
-                            for honeymoon trips to Andaman. The weather is pleasant with calm seas, perfect for water
-                            activities and beach relaxation. Avoid monsoon season (June-September) for the best
-                            experience.</p>
-                        <h6 style="color: #17a2b8; font-weight: 600; margin-bottom: 15px;">Special Honeymoon
-                            Experiences:</h6>
-                        <ul style="color: #666; line-height: 1.7; margin-bottom: 0;">
-                            <li>Private candlelight dinner on the beach</li>
-                            <li>Sunset cruise with champagne service</li>
-                            <li>Couple spa treatments with ocean sounds</li>
-                            <li>Private photography sessions at scenic locations</li>
-                            <li>Romantic beach picnics on secluded islands</li>
+                        <p>With our <strong>Andaman tour packages from Uttarakhand</strong>, everything is planned very smoothly and carefully from flights to sightseeing so that you can just relax and enjoy your Andaman trip.</p>
+                       
+                        <h3 class="fs-6 fw-bold mt-2">Andaman Tour Package from Dehradun - Easy and Hassle Free Travel</h3>
+                            <p>If you are looking for an <strong>Andaman tour package from Dehradun</strong>, we make sure your journey is easy and very seamless. You can take flights via major metro cities that make your journey very comfortable and convenient. From the moment you land in Port Blair, our <strong>Andaman Bliss</strong> will take care of logistics like transfers, hotels and sightseeing tours.</p>
+                            <p>Whether it is your first island trip or traveling for the second time, our planning ensures that you never miss the best of Andaman Islands.</p>
+
+                        <h3 class="fs-6 fw-bold mt-2">How to Reach Andaman Islands from Uttarakhand</h3>
+                        <p>Here is a travel friendly guide that can help you plan your journey smoothly and easily.</p>
+                        <p><strong>By Flight:</strong></p>
+                        <p>No airlines operate a direct flight from Uttarakhand to Andaman, but travelers can easily reach Andaman from all the major cities:</p>
+                        <ul class="packages-list-style">
+                        <p><strong>Step by step route:</strong></p>
+                           <li> You need to start your journey from Dehradun.</li>
+                            <li> Then, take a connecting flight via Delhi, Chennai, Kolkata or Bengaluru.</li>
+                            <li>From there, you can board a direct flight to reach Port Blair.</li>
                         </ul>
+
+                        <p><strong>By Sea:</strong></p>
+                        <p>Ships only operate from Chennai, Kolkata and Visakhapatnam to Andaman. Traveling from ship can be time consuming because sea journey lasts around 3 to 4 days.</p>
+                        <ul class="packages-list-style"> 
+                        <p><strong>Travel Tips for Uttarakhand Travelers</strong></p>
+                        <li>We suggest you book at least 4 to 6 months in advance and especially during peak season which is from October to March.</li>
+                        <li>It is best to choose a morning connecting flight to avoid the long layovers.</li>
+                        <li>Keep a valid government ID card like airport and hotel check ins.</li>
+                        <li>It is advisable to choose flight connection via Chennai or Kolkata for better availability.</li>
+                        </ul>
+                                                
+                        <h3 class="fs-6 fw-bold mt-3">Best Time To Visit Andaman Island</h3>
+                        <ul class="packages-list-style">
+                            <li>The best time to visit Andaman & Nicobar Island is between <em>October and May</em>. During these months, the weather is pleasant with calm seas. This time is perfect for sightseeing and water sports activities.</li>
+                            <li>The monsoon month that starts from <em>June to September</em> is not recommended as it causes heavy rainfall and might affect ferry schedules and water activities. </li>
+                        </ul>
+
+                        <h3 class="fs-6 fw-bold mt-3">Explore the Best of Andaman & Nicobar Islands</h3>
+                        <p>Our <strong>Andaman Nicobar tour package</strong> covers all the major destinations of Andaman:</p>
+                       <ul class="packages-list-style">
+                        <p><strong>Port Blair:</strong></p>
+                             <li>Cellular Jail</li>
+                             <li>Corbyn Cove Beach</li>
+                             <li>Local sightseeing & museums</li>
+                             <li>Chidiyatapu</li>
+                             <li>Ross & North Bay Island</li>
+                            </ul>
+
+                        <ul class="packages-list-style">
+                        <p><strong>Havelock Island:</strong></p>
+                             <li>Radhanagar Beach</li>
+                             <li>Kalapathar Beach</li>
+                             <li>Elephant Beach for water sports activities</li>
+                            </ul>
+
+                        <ul class="packages-list-style">
+                        <p><strong>Neil Island:</strong></p>
+                             <li>Natural rock formation</li>
+                             <li>Laxmanpur Beach</li>
+                             <li>Bharatpur Beach</li>
+                            </ul>
+
+                        <ul class="packages-list-style">
+                        <p><strong>Baratang Island:</strong></p>
+                             <li>Limestone Cave</li>
+                             <li>Mud Volcanoes</li>
+                             <li>Mangrove Boat Ride</li>
+                            </ul>
+
+                        <ul class="packages-list-style">
+                        <p><strong>Diglipur:</strong></p>
+                             <li>Ross & Smith Island (Twin Island)</li>
+                             <li>Saddle Peak</li>
+                            </ul>
+                        
+                        <ul class="packages-list-style">
+                        <p><strong>Additional Attractions of Andaman:</strong></p>
+                             <li><strong>Mahatma Gandhi Marine National Park:</strong> Perfect for snorkeling and diving with rich marine life and coral reefs.</li>
+                             <li><strong>Viper Island:</strong> A historic site of Andaman and Nicobar Islands.</li>
+                             <li><strong>Little Andaman:</strong> This beach is known for its stunning waterfall, lush green forest and stunning beauty.</li>
+                             <li><strong>Jolly Buoy Island and Red Skin Island:</strong> Experience the corals, fishes and enjoy many thrilling water sports activities.</li>
+                             <li><strong>Mount Harriet (Mount Manipur National Park):</strong> Go for trekking to the highest point in South Andaman and get the stunning view of the Andaman ocean.</li>
+                            </ul>
+                        <p><strong>Conclusion:</strong> The <strong>Andaman and Nicobar Island</strong> offers a perfect blend of history, natural beauty and adventure. Customize your <strong>Andaman tour itinerary</strong> to include these destinations for an unforgettable Andaman experience.</p>
+                                              
+                        <h3 class="fs-6 fw-bold mt-3">Exciting Water Activities in Andaman and Nicobar Island</h3>
+                            <p>Our <strong>Andaman tour package from Uttarakhand</strong> is incomplete without thrilling water sports and sea adventures that let you experience the true beauty of the islands.
+                            </p>
+                            <ul class="packages-list-style">
+                                <li><strong>Scuba Diving:</strong> Explore vibrant marine life and stunning coral reefs in Havelock and Neil Island.</li>
+                                <li><strong>Sea Walking:</strong> Walk on the ocean floor and witness colorful corals and fishes up close.</li>
+                                <li><strong>Semi Submarine Boat Ride:</strong> Enjoy underwater coral views and marine life without getting wet.</li>
+                                <li><strong>Andaman Dolphin Boat Ride:</strong> One of the most exciting activities for families and children.</li>
+                                <li><strong>Parasailing:</strong> Fly above crystal-clear waters and enjoy breathtaking aerial views of Andaman.</li>
+                                <li><strong>Sea Kart:</strong> Experience a high-speed ride across the open waters of Andaman.</li>
+                                <li><strong>Snorkeling:</strong> Swim near the shoreline and explore the vibrant underwater world.</li>
+                                <li><strong>Jet Ski:</strong> A thrilling water sport perfect for adventure lovers visiting Andaman.</li>
+                                <li><strong>Banana Boat Ride:</strong> A fun and exciting ride on a banana-shaped inflatable speedboat.</li>
+                                <li><strong>Glass Bottom Boat Ride:</strong> Ideal for families and elderly travelers to enjoy marine views safely.</li>
+                            </ul>
+
+                        <h3 class="fs-6 fw-bold mt-3">Andaman Tour Package from Bangalore Price</h3>
+                        
+                            <ul class="packages-list-style">
+                                <li><strong>Budget Packages:</strong> A budget package may cost you around INR 18,000 to INR 25,000 per person.</li>
+                                <li><strong>Standard Packages:</strong> It will cost you around INR 28,000 to INR 40,000 per person.</li>
+                                <li><strong>Luxury Packages:</strong> It may vary between INR 50,000 to INR 80,000 or even more.</li>
+                            
+                                <p>Please note that the prices that I have mentioned above are the cost of only ground arrangements like hotel, ferry transfers and sightseeing, as flight tickets are not included in our packages.</p>
+                            </ul>
+ 
+                            <h3 class="fs-6 fw-bold mt-3">Sample 6 Nights 7 Days Tour Itinerary </h3>
+                        <ul>
+                            <li><strong>Day 1:</strong> Arrive in Port Blair and visit the historical site like <a href="https://andamanbliss.com/islands/port-blair/cellular-jail" target="_blank">Cellular Jail</a> and witness the Light & sound show in the evening.</li>
+                            <li><strong>Day 2:</strong> Take a ferry ride to <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep"target="_blank">Havelock island</a> and enjoy the world famous <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/radhanagar-beach"target="_blank">Radhanagar beach</a>. In the evening, explore Kalapathar beach where you can relax and unwind.</li>
+                            <li><strong>Day 3:</strong> On the next day, take a short boat ride to <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/elephant-beach"target="_blank">Elephant beach</a> and enjoy a variety of water sports activities like scuba diving, snorkeling and glass bottom boat rides.</li>
+                            <li><strong>Day 4:</strong> Take a boat ride to <a href="https://andamanbliss.com/islands/neil-shaheed-dweep"target="_blank">Neil island</a> and visit Laxmanpur beach and <a href="https://andamanbliss.com/islands/neil-shaheed-dweep/natural-rock"target="_blank">Natural Bridge</a>. On the same day, visit Bharatpur beach and take part in a variety of water activities.</li>
+                            <li><strong>Day 5:</strong> On the fifth day, get back to Port Blair and visit Ross and <a href="https://andamanbliss.com/islands/port-blair/north-bay-island"target="_blank">North bay island</a>. In the evening, visit Chidiyatapu beach and enjoy birdwatching.</li>
+                            <li><strong>Day 6:</strong> Visit <a href="https://andamanbliss.com/islands/baratang"target="_blank">Baratang island</a> and explore <a href="https://andamanbliss.com/islands/baratang/lime-stone-caves"target="_blank">Limestone cave</a> and <a href="https://andamanbliss.com/islands/baratang/mud-volcano"target="_blank">Mud volcano</a>.</li>
+                            <li><strong>Day 7:</strong> Departure</li>
+                        </ul>
+
+                        
+                        <h3 class="fs-6 fw-bold mt-3">How Many Days Are Sufficient for an Andaman Tour Package</h3>
+                        <ul class="packages-list-style">
+                            <li><strong>5 - 7 Days:</strong> Explore <a href="https://andamanbliss.com/islands/port-blair/" target="_blank">Port Blair</a>, <a href="https://andamanbliss.com/islands/havelock-swaraj-dweep/" target="_blank">Havelock</a>, and <a href="https://andamanbliss.com/islands/neil-shaheed-dweep/" target="_blank">Neil Island</a>.</li>
+                            <li><strong>7 - 10 Days:</strong> Add <a href="https://andamanbliss.com/islands/baratang/" target="_blank">Baratang</a>, <a href="https://andamanbliss.com/islands/rangat/" target="_blank">Rangat</a>, and <a href="https://andamanbliss.com/islands/long-island/" target="_blank">Long Island</a> to your itinerary</li>
+                        </ul>
+
+
+                        <h3 class="fs-6 fw-bold mt-3">Andaman Tour Package for family - Safe, Fun and Memorable</h3>
+                        <p>Want to travel with your loved ones, well our <strong><a href="https://andamanbliss.com/andaman-family-packages/" target="_blank">Andaman tour package for family</a></strong> is thoughtfully designed to suit every type of travelers. From comfortable accommodations and smooth ferry rides to family friendly sightseeing and quality time, every detail is handled with care and professionalism.</p>
+                        <p>Kids will going to love the beaches and boat rides, while elders will enjoy the peaceful environment and the beauty of Andaman Islands.</p>
+
+                        <h3 class="fs-6 fw-bold mt-3">Why Book with One of the Best Travel Agencies in Andaman?</h3>
+                        <p>When you book with one of the <strong>Best travel agencies in Andaman</strong> like <strong>Andaman Bliss</strong>, you will get local expertise, 24x7 customer support and real time assistance. As one of the <strong>top travel agencies in Andaman</strong>, we understand the Andaman Island better than any other.</p>
+                        <ul class="packages-list-style">
+                            <p>What Makes Us Trusted?</p>
+                            <li>On ground local support</li>
+                            <li>Handpicked hotels & experiences</li>
+                            <li>Transparent pricing</li>
+                            <li>Personalized planning</li>
+                            <li>24x7 travel assistance</li>
+                        </ul>
+                        <p>Your safety, comfort and satisfaction are always our top priority.</p>
+
+                        <h3 class="fs-6 fw-bold mt-3">Customized Andaman Itinerary from Uttarakhand</h3>
+                        <p>Every traveler is different from each other. So that is the reason why we provide a <strong>customized Andaman itinerary from Uttarakhand</strong> to match your preferences, travel style and budget.</p>
+                        <ul class="packages-list-style">
+                            <li>A relaxed beach holiday</li>
+                            <li>Thrilling adventure activities</li>
+                            <li>Romantic experiences</li>
+                            <li>A relaxing and slow paced family trip.</li>
+                        </ul>
+                        <p>We will design your itinerary based on what you need.</p>
+                        
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <h3 class="fs-6 fw-bold">Inclusion:</h3>
+                                <ul class="packages-list-style">
+                                    <li>Luxury accommodation in beachside resorts</li>
+                                    <li>Complimentary breakfast with local delicacies</li>
+                                    <li>Air-conditioned transportation for all transfers</li>
+                                    <li>Guided tour to major attractions</li>
+                                    <li>Airport pick-up & drop</li>
+                                    <li>All inter-island ferry transfers</li>
+                                    <li>Complimentary adventure activities</li>
+                                </ul>
+
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="fs-6 fw-bold">Exclusion:</h3>
+                                <ul class="packages-list-style">
+                                    <li>Airfare to / from Port Blair</li>
+                                    <li>Any kind of personal expenses</li>
+                                    <li>Travel insurance or any other kind of insurance</li>
+                                    <li>Alcoholic beverages</li>
+                                    <li>Activities not mentioned in the package</li>
+                                    <li>Meals other than those specified in the package</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -1694,99 +1901,14 @@ function toggleItinerary(dayNumber) {
     </div>
 </section>
 
-<!-- Modal removed: replaced with inline Read More content -->
-
-<!-- Packages Section - converted to cards -->
-<section id="packages" class="section-padding">
-    <div class="container">
-        <div class="text-center">
-            <h2 class="section-title-h2 text-center">Andaman Honeymoon <span> Packages</span></h2>
-            <p>Everything you need to know about planning your Ross and Smith Islands adventure</p>
-        </div>
-        <div class="activity-grid">
-            <a class="activity-card" href="/andaman-3-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://andamanbliss.com/site/img/scuba-dive-in-india.jpg');">
-                <div class="activity-topbar">
-                    <div class="time-badge">3 Nights / 4 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹35,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Andaman Honeymoon</div>
-                    <div class="activity-subtitle">Port Blair & Havelock</div>
-                    <div class="inclusions">Inclusion: Stay, Breakfast, Transfers, Sightseeing</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-4-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">4 Nights / 5 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹42,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Multi-Island Experience</div>
-                    <div class="activity-subtitle">Port Blair + Havelock + Neil</div>
-                    <div class="inclusions">Inclusion: Hotels, Breakfast, Ferries, Guided Tours</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-5-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1526481280698-906943c9a8be?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">5 Nights / 6 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹52,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Complete Island Tour</div>
-                    <div class="activity-subtitle">Comprehensive Experience</div>
-                    <div class="inclusions">Inclusion: Ross, Baratang, Water Sports</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-6-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">6 Nights / 7 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹62,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Premium Adventure</div>
-                    <div class="activity-subtitle">Luxury Island Experience</div>
-                    <div class="inclusions">Inclusion: Private Cruise, Couple Spa, Sunset</div>
-                </div>
-            </a>
-
-            <a class="activity-card" href="/andaman-7-night-honeymoon-package-from-chennai"
-                style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1400&auto=format&fit=crop');">
-                <div class="activity-topbar">
-                    <div class="time-badge">7 Nights / 8 Days</div>
-                    <span class="book-now-pill">Book Now</span>
-                </div>
-                <div class="activity-content">
-                    <div class="activity-price">Starts from: <span>₹75,999</span> <small>/ per couple</small></div>
-                    <div class="activity-title">Ultimate Paradise</div>
-                    <div class="activity-subtitle">Complete Andaman Exploration</div>
-                    <div class="inclusions">Inclusion: All Major Islands, Activities, Transfers</div>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section (redesigned) -->
+<!-- FAQ Section  -->
 <section class="faq-section section-padding">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <div class="faq-header mb-5">
-                    <h2 class="section-title-h2">Frequently Asked <span>Questions</span></h2>
-                    <p class="faq-subtitle">Everything you need to know about planning your Ross and Smith Islands
-                        adventure
-                    </p>
+                    <h2 class="section-title-h2 text-center">Frequently Asked <span> Questions</span></h2>
+                    <p class="faq-subtitle">Everything you need to know about planning your trip to Andaman Islands From Uttarakhand</p>
                 </div>
             </div>
         </div>
@@ -1799,15 +1921,14 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-route"></i>
                         </div>
-                        <h3>How can I go from Port Blair to thе Ross And Smith In Diglipur?</h3>
+                        <h3>How can I book an Andaman tour package from Uttarakhand?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="faq-answer collapse show" id="faqAnswer1" style="">
-                        <p>To gеt from Port Blair to thе Ross And Smith Island In Diglipur you havе to travеl by road to
-                            Diglipur and thеn a boat ridе from Aеrial Bay Jеtty In Diglipur.</p>
+                        <p>You can book an Andaman tour package from Uttarakhand by contacting a trusted Andaman based travel agency. Our Andaman Bliss team will help you plan accommodation, transfers, sightseeing and activities and also assist you with the flight booking process from Dehradun.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq2">
@@ -1816,15 +1937,14 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
-                        <h3>Is it possible for me to spend a night at Ross And Smith Island?</h3>
+                        <h3>Is there any direct flight from Dehradun to Andaman?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer2">
-                        <p>No, lodging cannot bе providеd on thе twin islands of Ross And Smith Island. Thе majority of
-                            tourists spеnd thе night in Diglipur and visit thе islands during thе day.</p>
+                        <p>Currently, there are no direct flights from Dehradun to Port Blair. Most of the travelers from those cities fly via Delhi, Chennai or Kolkata. Our Andaman tour package from Dehradun offers complete guidance so that you can have smooth and comfortable flight connections.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq3">
@@ -1833,55 +1953,65 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-clock"></i>
                         </div>
-                        <h3>What kinds of things can I do at thе Ross And Smith Island?</h3>
+                        <h3>What is the best time to visit Andaman from Uttarakhand?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer3">
-                        <p>As a tourist you arе ablе to participate in a wide range of activitiеs likе bird watching,
-                            swimming, snorkеling and Ross And Smith Beach еxploration.</p>
+                        <p>The best time to visit Andaman Islands from Uttarakhand is between October and May. During these month, the weather is pleasant with calm seas and perfect for participating in water activities like scuba diving and snorkeling.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
                 <div class="faq-item" id="faq5">
                     <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer5"
                         aria-expanded="false">
                         <div class="faq-icon">
-                            <i class="fas fa-car"></i>
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>Is camping pеrmittеd on thе Ross And Smith Island?</h3>
+                        <h3>Are Andaman packages from Uttarakhand suitable for families?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer5">
-                        <p>In an attempt for thе prеsеrvation of thе natural еnvironmеnt that includеs Ross And Smith
-                            Island and camping is usually not allowеd. It is rеcommеndеd that visitors take day visits
-                            and rеturn back to thе accommodation that you takе in Diglipur instеad of staying thе night
-                            at thе twin Island.</p>
+                        <p>Yes, Andaman tour packages from Uttarakhand are perfect for families and children. The Andaman Island offers some of the safest beaches, comfortable hotels, glass bottom boat ride and family sightseeing tours.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq6">
                     <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer6"
                         aria-expanded="false">
                         <div class="faq-icon">
-                            <i class="fas fa-mobile-alt"></i>
+                            <i class="fas fa-hotel"></i>
                         </div>
-                        <h3>Аrе thеrе specific regulations regarding photography on the Ross And Smith Island?</h3>
+                        <h3>What activities are included in an Andaman Nicobar tour package?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer6">
-                        <p>Whilе thеrе arеn't any specific regulations rеgarding photography and tourists arе encouraged
-                            to usе sensitivity when shooting pictures and particularly in dеlicatе locations.
-                            Furthermore, it is also imperative that you adhere to еvеry singlе instructions furnished by
-                            local authoritiеs or tour opеrators.</p>
+                        <p>An <strong>Andaman Nicobar tour package</strong> includes sightseeing tours, island visit, Radhanagar Beach sunset tours, water activities in Elephant Beach and historic site visit.</p>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="faq-item" id="faq4">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer4"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Can I customize my Andaman itinerary from Uttarakhand?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer4">
+                        <p>Yes, you can customize your Andaman itinerary from Uttarakhand according to your travel dates, budget, preferred islands and water sports activities.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq7">
@@ -1890,18 +2020,62 @@ function toggleItinerary(dayNumber) {
                         <div class="faq-icon">
                             <i class="fas fa-hotel"></i>
                         </div>
-                        <h3>Is it possiblе for mе to travеl to Ross And Smith Island and rеturn to Port Blair in thе
-                            samе day?</h3>
+                        <h3>Why should I book with an Andaman based local tour operator?</h3>
                         <div class="faq-toggle">
                             <i class="fas fa-plus"></i>
                             <i class="fas fa-minus"></i>
                         </div>
                     </div>
                     <div class="collapse faq-answer" id="faqAnswer7">
-                        <p>Although it is fеasiblе to go from Port Blair to Ross And Smith Island In Diglipur in a samе
-                            day and it еntails a lеngthy road and boat trip. To completely explore and takе in thе
-                            bеauty and charms of thе islands and it is advisеd to book a stay of at lеast a fеw days in
-                            Diglipur.</p>
+                        <p>If you book your Andaman tour package with a top travel agency like Andaman Bliss, we offer you local expertise, better pricing and real time support that will make your Andaman trip truly unforgettable and memorable.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq8">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer8"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Is Andaman safe for first time travelers?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer8">
+                        <p>Yes, Andaman Island is one of the safest travel destinations in India. Andaman Island offers clean surroundings, friendly locals and well organized tourism infrastructure that eventually makes it ideal for first time travelers.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq9">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer9"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>How many days are perfect to visit Andaman and Nicobar Islands?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer9">
+                        <p>A 5 to 7 day Andaman tour package from Uttarakhand is perfect to explore Port Blair, Havelock Island and Neil Island comfortably and smoothly.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq10">
+                    <div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faqAnswer10"
+                        aria-expanded="false">
+                        <div class="faq-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3>Does the Andaman tour package include a flight from Uttarakhand?</h3>
+                        <div class="faq-toggle">
+                            <i class="fas fa-plus"></i>
+                            <i class="fas fa-minus"></i>
+                        </div>
+                    </div>
+                    <div class="collapse faq-answer" id="faqAnswer10">
+                        <p>Most of our Andaman tour packages from Uttarakhand mainly focus on land arrangements. However, our Andaman Bliss team can help you with the flight booking process for a smooth travel experience.</p>
                     </div>
                 </div>
             </div>
@@ -1919,42 +2093,24 @@ function toggleItinerary(dayNumber) {
             <div class="testi-subtitle">Real experiences from real travelers</div>
         </div>
         <div class="testimonials-carousel">
-            <div class="t-card">
+            @foreach($reviews as $review)
+        <div class="t-card p-3">
                 <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
+                    <div class="stars">
+                    @for ($i = 0; $i < 5; $i++)
+                        @if ($i < $review->rating)
+                            <i class="fas fa-star filled-star"></i>
+                        @else
+                            <i class="fas fa-star empty-star"></i>
+                        @endif  
+                    @endfor  
+                    </div>
+                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Google</div>
                 </div>
-                <div class="t-title">Very Good and experience</div>
-                <div class="t-excerpt">Very Good and experience</div>
-                <div class="t-meta"><span>customer,</span><span>June 12</span></div>
+                <div class="t-excerpt">{{ Str::limit($review['comment'],150) }}</div>
+                <div class="t-meta"><span>{{$review['reviewer_name']}},</span><span>{{ \Carbon\carbon::parse($review['review_date'])->format('M Y') }}</span></div>
             </div>
-            <div class="t-card">
-                <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
-                </div>
-                <div class="t-title">Big Deals on AirTickets</div>
-                <div class="t-excerpt">Very good offers on air tickets on last minute bookings</div>
-                <div class="t-meta"><span>Saktha Krishnaan,</span><span>June 12</span></div>
-            </div>
-            <div class="t-card">
-                <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
-                </div>
-                <div class="t-title">Amazing Support</div>
-                <div class="t-excerpt">Found a great deal and super fast confirmation. Highly recommended!</div>
-                <div class="t-meta"><span>Rajesh Kumar,</span><span>June 10</span></div>
-            </div>
-            <div class="t-card">
-                <div class="t-row">
-                    <div class="stars">★★★★★</div>
-                    <div class="verified-pill"><i class="fas fa-check-circle"></i> Verified</div>
-                </div>
-                <div class="t-title">Smooth Booking</div>
-                <div class="t-excerpt">Quick booking flow and friendly assistance throughout the trip.</div>
-                <div class="t-meta"><span>Anita D.,</span><span>June 8</span></div>
-            </div>
+           @endforeach
         </div>
     </div>
 </section>

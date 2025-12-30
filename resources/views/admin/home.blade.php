@@ -34,7 +34,21 @@
       </div>
     </div>
   </div>
+
 </div>
+
+<div class="float-right card-body">
+    <form action="{{ route('admin.home') }}" method="get" id="filterform">
+     <input
+    type="text"
+    name="daterange"
+    class="form-control"
+    value="{{ request('daterange') ?? now()->format('Y-m-d').' - '.now()->format('Y-m-d') }}"
+/>
+
+    </form>
+</div>
+
 
 <!-- Content -->
 <div class="content">
@@ -43,7 +57,8 @@
 
     @include('admin.layouts.alert')
 
-   
+
+
     <!-- Widgets  -->
     <div class="row">
 
@@ -163,15 +178,31 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<script type="text/javascript">
-  $(document).ready(function() {
-    $(function() {
-      $('input[name="daterange"]').daterangepicker({
-        opens: 'left'
-      }, function(start, end, label) {
-        console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
-      });
+<script>
+$(function () {
+
+    const $input = $('input[name="daterange"]');
+
+    $input.daterangepicker({
+        opens: 'left',
+        autoApply: true,
+        locale: {
+            format: 'YYYY-MM-DD'
+        }
     });
-  });
+
+    $input.on('apply.daterangepicker', function (ev, picker) {
+        $(this).val(
+            picker.startDate.format('YYYY-MM-DD') +
+            ' - ' +
+            picker.endDate.format('YYYY-MM-DD')
+        );
+
+        document.getElementById('filterform').submit();
+    });
+
+});
 </script>
+
+
 @endsection

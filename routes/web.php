@@ -507,7 +507,8 @@ Route::get('/', [HomeController::class, 'devindex'])->name('index');
 Route::match(['get', 'post'], '/booking-details/{token}', [FerryTickets::class, 'bookings'])->name('booking-details');
 Route::post('booking/confirm/{bookId}', [PaymentController::class, 'bill'])->name('booking.bill');
 
-Route::any('contact', [HomeController::class, 'contact'])->name('contact')->middleware('throttle:5,1');;
+Route::any('contact', [HomeController::class, 'contact'])->name('contact')->middleware('throttle:5,1');
+Route::post('photography-enquiry',[HomeController::class,'photoEnq'])->name('photo-enq')->middleware('throttle:5,1');
 Route::post('/cabs/search', [CabController::class, 'search']);
 Route::match(['get', 'post'], '/bikes/search', [BikeController::class, 'search'])->name('bikes.search');
 Route::get('about', [AboutController::class, 'index'])->name('about');

@@ -381,30 +381,43 @@ class ActivityController extends Controller
     }
 
     public function dynamic(string $url)
-    {
-        $activity = Activities::with(['activityPhotos', 'category', 'facilities', 'policies', 'faqs', 'reviews', 'highlights', 'slots', 'meta'])->where('url', $url)->orWhere('slug', $url)->first();
-        $addons = Addon::where('type', 'activity')->get();
-        if ($activity && $activity->addons) {
-            $addonIds = explode(',', $activity->addons);
-            $activity->addon_names = Addon::whereIn('id', $addonIds)->get();
-        }
+{
+    $activity = Activities::with([
+        'activityPhotos', 'category', 'facilities', 'policies',
+        'faqs', 'reviews', 'highlights', 'slots', 'meta'
+    ])
+    ->where('url', $url)
+    ->orWhere('slug', $url)
+    ->firstOrFail();
 
-        $reviews = GoogleReview::orderBy('review_date', 'DESC')->where('comment', '!=', null)->where('rating', 5)->take(10)->get();
-        $review_images = ReviewImage::all();
+    $addons = Addon::where('type', 'activity')->get();
 
-        $review = GoogleReview::all();
-        $rating = [
-            'total_reviews' => $review->count(),
-            'average_rating' => $review->avg('rating'),
-            '5' => $review->where('rating', 5)->count(),
-            '4' => $review->where('rating', 4)->count(),
-            '3' => $review->where('rating', 3)->count(),
-            '2' => $review->where('rating', 2)->count(),
-            '1' => $review->where('rating', 1)->count(),
-        ];
-
-        return view("activities.dev.show", compact('activity', 'reviews', 'rating', 'review_images'));
+    if ($activity->addons) {
+        $addonIds = explode(',', $activity->addons);
+        $activity->addon_names = Addon::whereIn('id', $addonIds)->get();
     }
+
+    $reviews = GoogleReview::whereNotNull('comment')
+        ->where('rating', 5)
+        ->latest('review_date')
+        ->take(10)
+        ->get();
+
+    $review_images = ReviewImage::all();
+
+    $allReviews = GoogleReview::all();
+    $rating = [
+        'total_reviews' => $allReviews->count(),
+        'average_rating' => $allReviews->avg('rating'),
+        '5' => $allReviews->where('rating', 5)->count(),
+        '4' => $allReviews->where('rating', 4)->count(),
+        '3' => $allReviews->where('rating', 3)->count(),
+        '2' => $allReviews->where('rating', 2)->count(),
+        '1' => $allReviews->where('rating', 1)->count(),
+    ];
+
+    return view('activities.dev.show', compact('activity', 'reviews', 'rating', 'review_images'));
+}
 
     public function PaymentReview(Request $request)
     {
@@ -700,7 +713,7 @@ class ActivityController extends Controller
         $pdf = $this->generateVoucher($booking->id);
 
         // 🟡 Update: subject includes activity name and ticket code
-        $mailData['subject'] = 'Activity Booking Confirmation - ' . $activity->service_name . ' [' . $ticketcode . ']';
+        $mailData['subject'] = '✅ Activity Booking Confirmation - ' . $activity->service_name . ' [' . $ticketcode . ']';
 
         $mailData['email'] = env('MAIL_FROM_ADDRESS', 'info@andamanbliss.com');
         $mailData['name'] = env('MAIL_FROM_NAME', 'AndamanBliss');
@@ -822,4 +835,17 @@ class ActivityController extends Controller
             'redirect_url' => route('activities.index')
         ]);
     }
+
+
+//    public function sendforceConfirmation($id)
+// {
+//     logger('Force confirmation started', ['id' => $id]);
+
+//     // Step 1: Dispatch job
+//     logger('Dispatching SendActivityConfirmation job', ['id' => $id]);
+//     SendActivityConfirmation::dispatch($id);
+//     logger('SendActivityConfirmation job dispatched', ['id' => $id]);
+
+// }
+
 }
