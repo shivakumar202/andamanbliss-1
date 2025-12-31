@@ -685,7 +685,7 @@
                                 document.body.style.pointerEvents = '';
 
                                 setTimeout(() => {
-                                    window.location.href = `/boat-trips/${successData.name}`;
+                                    window.location.href = `/upsale`;
                                 }, 6000);
                             }
                         else {

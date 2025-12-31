@@ -369,9 +369,9 @@ class BoatTripsController extends Controller
 
             Log::info('[Payment] Transaction updated', ['transaction_id' => $transaction->id]);
 
-            SendBoatTripBookMail::dispatch($request->booking_id)->delay(now()->addMinutes(1));
-            $this->sendPaymentConfirmation($trips);
-            $this->sendBookingConfirmationEmail($trips);
+            // SendBoatTripBookMail::dispatch($request->booking_id)->delay(now()->addMinutes(1));
+            // $this->sendPaymentConfirmation($trips);
+            // $this->sendBookingConfirmationEmail($trips);
             return response()->json([
                 'success' => true,
                 'name' => $name,
