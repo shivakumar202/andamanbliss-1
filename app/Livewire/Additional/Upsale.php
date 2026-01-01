@@ -169,7 +169,7 @@ class Upsale extends Component
         $this->serviceCost = $taxAmount;
         $this->totalCost = $this->activityCost + $taxAmount;
     }
-
+ 
     public function submit()
     {
         $activities = $this->activities;

@@ -69,7 +69,7 @@
                                         </div>
                                     </div>
                                 @endforeach
-                            </div>
+                            </div> 
 
                             <div class="col-lg-4 col-md-5 p-2">
                                 <div class="tour-package-sticky-sidebar">
