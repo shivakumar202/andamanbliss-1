@@ -180,6 +180,7 @@ function showNotificationBlockedMessage() {
         <div style="
             position: fixed;
             bottom: 20px;
+            display: none;
             right: 20px;
             background: #ffdddd;
             padding: 16px;

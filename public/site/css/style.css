@@ -34690,3 +34690,148 @@ color: #444;
     font-weight: 700;
     text-shadow: -2px 2px #756f6f;
 }
+
+/* Container */
+
+
+/* Header */
+.up-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.up-header h3 {
+    font-weight: 700;
+}
+.up-star {
+    color: #ffc107;
+    margin-right: 6px;
+}
+.up-header p {
+    color: #6c757d;
+}
+
+/* Grid */
+.up-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Card */
+.up-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform .2s ease;
+}
+.up-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image */
+.up-card-image {
+    position: relative;
+}
+.up-card-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.up-discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+/* Body */
+.up-card-body {
+    padding: 1rem;
+}
+.up-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.up-desc {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 0.5rem 0 1rem;
+}
+
+/* Price */
+.up-price {
+    margin-bottom: 1rem;
+}
+.up-price-original {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 8px;
+}
+.up-price-offer {
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+/* Actions */
+.up-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.up-counter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.up-counter button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+}
+.up-counter span {
+    font-weight: 600;
+}
+
+/* Button */
+.up-btn {
+    background: #0d6efd;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+.up-btn:hover {
+    background: #0b5ed7;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .up-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .up-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.quantity-group .btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.mini-size{
+    width: auto;
+    height: 30px;
+}
